@@ -3,27 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     
-    <title>Tic-Tac-Toe</title>
+    <title>Bills Hangman</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <form id="word" name="word" action="index.html">
+        <div>
+          <label for="word-txt">Enter Word Here to Play Game</label>
+          <textbox name="word-txt" id="quote-txt" placeholder="222Pick Any Word ..."></textbox>
+        </div>
+        <div>
+          <label for="words">Game Word</label>
+          <input type="text" name="author" id="gameWord" placeholder="Pick Any Word ..." />
+          <label id="wordInput">_ _ _ _ _ _ _ _ _ _ _</label>
+        </div>
+        <input type="submit" name="go-btn" id="go-btn" value="Go Play HangMan" />
+      </form>
 
     <div class="container"></div>
 
     
        <div class="container">
-             <h1>Tic-Tac-Toe Game By WET</h1>
+             <h1>HangMan</h1>
             <div class="play-area">
-                <div id="box0" class="block"></div>
-                <div id="box1" class="block"></div>
-                <div id="box2" class="block"></div>
-                <div id="box3" class="block"></div>
-                <div id="box4" class="block"></div>
-                <div id="box5" class="block"></div>
-                <div id="box6" class="block"></div>
-                <div id="box7" class="block"></div>
-                <div id="box8" class="block"></div>
+                <div id="boxA" class="block">A</div>
+                <div id="boxB" class="block">B</div>
+                <div id="boxC" class="block">C</div>
+                <div id="boxD" class="block">D</div>
+                <div id="boxE" class="block">E</div>
+                <div id="boxF" class="block">F</div>
+                <div id="boxG" class="block">G</div>
+                <div id="boxH" class="block">H</div>
+                <div id="boxI" class="block">I</div>               
+                <div id="boxJ" class="block">J</div>
+                <div id="boxK" class="block">K</div>
+                <div id="boxL" class="block">L</div>
+                <div id="boxM" class="block">M</div>
+                <div id="boxN" class="block">N</div>
+                <div id="boxO" class="block">O</div>
+                <div id="boxP" class="block">P</div>
+                <div id="boxQ" class="block">Q</div>               
+                <div id="boxR" class="block">R</div>
+                <div id="boxS" class="block">S</div>
+                <div id="boxT" class="block">T</div>
+                <div id="boxU" class="block">U</div>
+                <div id="boxV" class="block">V</div>
+                <div id="boxX" class="block">X</div>
+                <div id="boxY" class="block">Y</div>
+                <div id="boxZ" class="block">Z</div>
           </div>
                 <h2 id="winner">Play Game</h2>
    <button id="resetArea" type="button">reset</button>         
