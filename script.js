@@ -28,6 +28,12 @@ var game = {
     y: 0,
     z: 0,}
 
+let boxes = document.querySelectorAll('.block');
+let digit = 0;
+var result = "";
+var wordLength = 0;
+
+
 const goButton = document.querySelector('#go-btn');
 
 goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
@@ -47,17 +53,7 @@ wordTxt = wordTxt.toUpperCase();
             wordLength = wordTxt.length;
             console.log(wordLength)
 })
-/*
-const authorTxt = document.querySelector('#author').value
-console.log(authorTxt)
-document.querySelector('.hero').textContent = quoteTxt
 
-*/
-
-let boxes = document.querySelectorAll('.block');
-let digit = 0;
-var result = "";
-var wordLength = 0;
 
 for(let i =0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", function(evt){
