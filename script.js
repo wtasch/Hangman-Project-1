@@ -32,6 +32,15 @@ const goButton = document.querySelector('#go-btn');
 
 goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
 evt.preventDefault();
+
+let resetter = document.querySelectorAll(".block")
+    for( let i =  0; i < boxes.length; i++) {
+      resetter[i].style.background = "white";  
+    }
+      //document.getElementById('winner').textContent = "Start Playing"};
+      //game.b1 = 0;
+
+
 var wordTxt = document.querySelector('#gameWord').value
 //document.querySelector('#wordInput').textContent = wordTxt
 wordTxt = wordTxt.toUpperCase();
