@@ -32,6 +32,7 @@ let boxes = document.querySelectorAll('.block');
 let digit = 0;
 var result = "";
 var wordLength = 0;
+var wordTxt = "";
 
 
 const goButton = document.querySelector('#go-btn');
@@ -39,33 +40,28 @@ const goButton = document.querySelector('#go-btn');
 goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
 evt.preventDefault();
 
-let resetter = document.querySelectorAll(".block")
-    for( let i =  0; i < boxes.length; i++) {
-      resetter[i].style.background = "white";  
-    }
-      //document.getElementById('winner').textContent = "Start Playing"};
-      //game.b1 = 0;
 
 
-var wordTxt = document.querySelector('#gameWord').value
-//document.querySelector('#wordInput').textContent = wordTxt
-wordTxt = wordTxt.toUpperCase();
-            wordLength = wordTxt.length;
-            console.log(wordLength)
-})
-
-
+//GAME LOOP
 for(let i =0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", function(evt){
     var letter = this.textContent;
-    console.log(letter)
+         wordTxt = document.querySelector('#gameWord').value
+            wordLength = wordTxt.length;
+            console.log(wordLength)
+console.log(wordTxt)
+
+//document.querySelector('#wordInput').textContent = wordTxt
+wordTxt = wordTxt.toUpperCase();
        
     this.style.background = "yellow";
 //console.log(this.textContent)
-    console.log(digit);
-    var wordTxt = document.querySelector('#gameWord').value
+    console.log("digit:  " + digit); 
+    console.log("just clicked this letter: " + letter)
+    console.log("this is result:  " + result)
+    //var wordTxt = document.querySelector('#gameWord').value
     wordTxt = wordTxt.toUpperCase();
-        console.log(wordTxt)
+        
         
 //compare selection
 //while loop here
@@ -88,7 +84,13 @@ for(let i =0; i < boxes.length; i++) {
 
 ///RESET GAME
 
-    const resetButton = document.getElementById("resetArea");
+    const resetButton = document.getElementById("resetButton");
+    let resetter = document.querySelectorAll(".block")
+
+    for( let i =  0; i < boxes.length; i++) {
+      resetter[i].style.background = "white";  
+    }
+
 
 resetButton.addEventListener("click", function(e1){
     console.log("test")
@@ -108,7 +110,7 @@ resetButton.addEventListener("click", function(e1){
       game.b9 = 0;
    
         
-})
+})})
     //const checkBlue = document.querySelector('.block').innerHTML;
     //console.log(checkBlue)
   
