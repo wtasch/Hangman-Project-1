@@ -35,7 +35,14 @@ var wordLength = 0;
 var wordTxt = "";
 var letter = "";
 /*
+wordTxt = document.querySelector("#gameWord").placeholder;
+//document.querySelector("#gameWord").placeholder = "new word"
+wordTxt = "new words";
+wordLength = wordTxt.length;
+console.log(wordLength);
+console.log("wordTxt from game loop: " + wordTxt);
 
+*/
 const goButton = document.querySelector('#go-btn');
 
 goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
@@ -47,10 +54,10 @@ evt.preventDefault();
 for(let i =0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", function(evt){
    letter = this.textContent;
-         wordTxt = document.querySelector('#gameWord').value
+        wordTxt = document.querySelector('#gameWord').value
             wordLength = wordTxt.length;
             console.log(wordLength)
-console.log(wordTxt)
+console.log("wordTxt from game loop: " + wordTxt)
 
 //document.querySelector('#wordInput').textContent = wordTxt
 wordTxt = wordTxt.toUpperCase();
@@ -82,28 +89,36 @@ wordTxt = wordTxt.toUpperCase();
                     //document.write("you are a winnerz1")
                     console.log(game)
        }}
-    })}
-
-
-///RESET GAME
-})
-    const resetButton = document.getElementById("resetButton");
+const resetButton = document.getElementById("resetButton");
     let resetter = document.querySelectorAll(".block")
     
 resetButton.addEventListener("click", function(e1){
     console.log("test")
     result = "";console.log("result reset:  " + result)
     wordLength= 0;
-    wordTxt = "pls reset";console.log("wordTxt reset:  " + wordTxt)
+    wordTxt = "";
+    console.log("wordTxt reset:  " + wordTxt)
     letter = "";
     digit = 0;
-    document.getElementById('gameWord').value.textContent = "Pick a word"
-    //document.querySelector('#wordInput').textContent = ""; 
-
+    //document.querySelector("#gameWord").placeholder.textContent = "Pick a word"
+    wordTxt = document.querySelector("#gameWord").placeholder;
+    //document.querySelector("#gameWord").placeholder = "new word"
+    wordTxt = "new words";
+    wordLength = wordTxt.length;
 
     for( let i =  0; i < boxes.length; i++) {
       resetter[i].style.background = "white";  
     }
+})
+
+
+
+    })}
+
+
+///RESET GAME
+})
+    
     //let resetter = document.querySelectorAll(".block")
     //for( let i =  0; i < boxes.length; i++) {
       //resetter[i].style.background = "white";  
@@ -119,10 +134,10 @@ resetButton.addEventListener("click", function(e1){
       game.b9 = 0;
    
         
-})
+
     //const checkBlue = document.querySelector('.block').innerHTML;
     //console.log(checkBlue)
-  */
+  
     
     //if(player === 0) {
        // this.style.background = "red";
