@@ -1,32 +1,6 @@
 
 console.log('super code loaded');
-var game = {
-    a: 0,
-    b: 0,
-    c: 0,
-    d: 0,
-    e: 0,
-    f: 0,
-    g: 0,
-    h: 0,
-    i: 0,
-    j: 0,
-    k: 0,
-    l: 0,
-    m: 0,
-    n: 0,
-    o: 0,
-    p: 0,
-    q: 0,
-    r: 0,
-    s: 0,
-    t: 0,
-    u: 0,
-    v: 0,
-    w: 0,
-    x: 0,
-    y: 0,
-    z: 0,}
+//var gameArray = ["a","b","c","d"]
 
 let boxes = document.querySelectorAll('.block');
 let digit = 0;
@@ -34,6 +8,14 @@ var result = "";
 var wordLength = 0;
 var wordTxt = "_ _ _ _ _";
 var letter = "";
+var results = document.getElementById("game");
+//results.innerHTML = gameArray.join("");
+
+/*
+
+document.querySelector('#game').innerHTML = results.innerHTML
+//results.innerHTML = gameArray.join(" and ")
+//console.log(results)
 /*
 wordTxt = document.querySelector("#gameWord").placeholder;
 //document.querySelector("#gameWord").placeholder = "new word"
@@ -45,16 +27,22 @@ console.log("wordTxt from game loop: " + wordTxt);
 */
 const goButton = document.querySelector('#go-btn');
 
+
 goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
 evt.preventDefault();
 
+//load game work into array
+       wordTxt = document.querySelector('#gameWord').value
+var gameArray = wordTxt.split("")
 
 
 //GAME LOOP
 for(let i =0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", function(evt){
    letter = this.textContent;
-        wordTxt = document.querySelector('#gameWord').value
+ 
+        results.innerHTML = wordTxt//      new code
+        console.log("this is results:     " + results) //      new code
             wordLength = wordTxt.length;
             console.log(wordLength)
 console.log("wordTxt from game loop: " + wordTxt)
@@ -71,8 +59,12 @@ wordTxt = wordTxt.toUpperCase();
     //var wordTxt = document.querySelector('#gameWord').value
     wordTxt = wordTxt.toUpperCase();
         
-        
-//compare selection
+// new code to computer array with game word
+/*
+            for(i=0; i < wordTxt.length, i++) {
+                if(letter ==)
+            }*/
+            console.log(gameArray)
 //while loop here
         //while(digit <= wordLength){
             
