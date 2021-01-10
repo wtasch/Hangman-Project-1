@@ -1,6 +1,6 @@
 
 console.log('super code loaded');
-//var gameArray = ["a","b","c","d"]
+resultsArray = [];
 
 let boxes = document.querySelectorAll('.block');
 let digit = 0;
@@ -8,8 +8,8 @@ var result = "";
 var wordLength = 0;
 var wordTxt = "_ _ _ _ _";
 var letter = "";
-var results = document.getElementById("game");
-//results.innerHTML = gameArray.join("");
+var results = document.getElementById("gameDisplay");
+
 
 /*
 
@@ -33,54 +33,79 @@ evt.preventDefault();
 
 //load game work into array
        wordTxt = document.querySelector('#gameWord').value
-var gameArray = wordTxt.split("")
+wordTxt = wordTxt.toUpperCase();
+var gameArray = wordTxt.split("");
 
-
+ // loop to put dashes in display array
+    for(i=0; i < wordTxt.length; i++) {
+        resultsArray.push("_");
+    }     
+     
 //GAME LOOP
 for(let i =0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", function(evt){
    letter = this.textContent;
  
-        results.innerHTML = wordTxt//      new code
-        console.log("this is results:     " + results) //      new code
+        //results.innerHTML = wordTxt//      new code
+        //console.log("this is results:     " + resultsArray) //      new code
             wordLength = wordTxt.length;
             console.log(wordLength)
 console.log("wordTxt from game loop: " + wordTxt)
 
 //document.querySelector('#wordInput').textContent = wordTxt
-wordTxt = wordTxt.toUpperCase();
+
        
-    this.style.background = "yellow";
-//console.log(this.textContent)
-    console.log("digit:  " + digit); 
+    this.style.background = "red";
+
     console.log("just clicked this letter: " + letter)
-    console.log("this is result after click:" + result)
+    //console.log("this is result after click:" + result)
     console.log("this is wordTxt after click" + wordTxt)
     //var wordTxt = document.querySelector('#gameWord').value
     wordTxt = wordTxt.toUpperCase();
         
-// new code to computer array with game word
-/*
-            for(i=0; i < wordTxt.length, i++) {
-                if(letter ==)
-            }*/
-            console.log(gameArray)
-//while loop here
-        //while(digit <= wordLength){
-            
+               //resultsArray
+                    
+// new code to computer  TWO arrays gameArray & resultsArray>>>>>>>>>>>>>>>>>>
+            for(i=0; i < wordTxt.length; i++) {
+                if(letter == gameArray[i]) {
+                    this.style.background = "lightgreen";
+                    
+                    resultsArray[i] = gameArray[i];
+                   
+                    result = resultsArray.join("");
+                    document.getElementById("gameDisplay").innerHTML = result;
+                    console.log(" this result:  " + result)
+                    console.log("yes sir");
+                    console.log("this is matching leter:  " + gameArray[i]);
+                    console.log("this is game array in loop:  " + gameArray);
+                    console.log("this is resultsArray in loop:  " + resultsArray);
+                    //results.innerHTML = gameArray.join("");                 
+                            if (wordTxt == result) {
+                             console.log("you won");
+                             for( let i =  0; i < boxes.length; i++) {
+                                resetter[i].style.background = "white";  
+                              }
+                        //document.write("you are a winnerz1")
+                        //console.log(game)
+           }
+//document.querySelector('#game').innerHTML = results.innerHTML
+                }
+            }
+            //console.log("this is game array after loop:  " + gameArray)
+ //OLD Compare Code........................................            
             if(letter === wordTxt.charAt(digit) && digit < wordLength) {
-               console.log("yes sir")
-               digit = digit + 1;
-               result = result + letter;
-               document.querySelector('#wordInput').textContent = result;    
-               console.log("this is wordTxt:" + wordTxt) 
-               console.log("this is result:" + result) 
+               //console.log("yes sir")
+              // digit = digit + 1;
+              // result = result + letter;
+              // document.querySelector('#wordInput').textContent = result;    
+               //console.log("this is wordTxt:" + wordTxt) 
+               //console.log("this is result:" + result) 
             }    
-                    if (wordTxt == result) {
-                    console.log("you won");
+                    //if (wordTxt == result) {
+                   // console.log("you won");
                     //document.write("you are a winnerz1")
-                    console.log(game)
-       }
+                    //console.log(game)
+       //}
 
 
        
@@ -95,6 +120,10 @@ wordTxt = wordTxt.toUpperCase();
     
 resetButton.addEventListener("click", function(e1){
 
+
+    ///new reset code here
+    document.getElementById("gameDisplay").innerHTML = "_____ _"
+    resultsArray = [];
 
 
 
@@ -130,16 +159,7 @@ resetButton.addEventListener("click", function(e1){
     //for( let i =  0; i < boxes.length; i++) {
       //resetter[i].style.background = "white";  
       //document.getElementById('winner').textContent = "Start Playing"};
-      game.b1 = 0;
-      game.b2 = 0;
-      game.b3 = 0;
-      game.b4 = 0;
-      game.b5 = 0;
-      game.b6 = 0;
-      game.b7 = 0;
-      game.b8 = 0;
-      game.b9 = 0;
-   
+
         
 
     //const checkBlue = document.querySelector('.block').innerHTML;

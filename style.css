@@ -22,8 +22,8 @@
 
   .play-area {
     display: grid;
-    max-width: 800px;
-    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
+    max-width: 1000px;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
     margin: 70px;
     align-items: center;
   }
