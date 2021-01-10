@@ -11,6 +11,24 @@ var letter = "";
 var results = document.getElementById("gameDisplay");
 const goButton = document.querySelector('#go-btn');
 
+
+
+var words = ['Horse',
+'Pig',
+'Dog',
+'Cat',
+'Parrot',
+'Iguana'
+];
+function randomWord(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+for(var x=0; x<20; x++)
+    console.log(randomWord(words));
+
+    
+
 goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
 evt.preventDefault();
 //gameOver = 0;
@@ -24,6 +42,12 @@ wordTxt = document.querySelector('#gameWord').value
 wordTxt = wordTxt.toUpperCase();
 var gameArray = wordTxt.split("");
 
+//check for spaces
+console.log("game arry here" + gameArray)
+for(i=0; i < wordTxt.length; i++) {
+    if(gameArray[i] == " "){
+        alert("Sorry, No Splaces Please");
+    }}
  // loop to put dashes in display array
     for(i=0; i < wordTxt.length; i++) {
         resultsArray.push("_");
