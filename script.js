@@ -77,7 +77,12 @@ if(gameOver === 1) {
 }
 
 //load game work into array
+if(selectWordtype == "manual") {
 wordTxt = document.querySelector('#gameWord').value
+} else {
+wordTxt = randomWord(words)
+
+}
 wordTxt = wordTxt.toUpperCase();
 var gameArray = wordTxt.split("");
 
