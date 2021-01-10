@@ -10,24 +10,63 @@ var wordTxt = "_ _ _ _ _";
 var letter = "";
 var results = document.getElementById("gameDisplay");
 const goButton = document.querySelector('#go-btn');
+let selectWordtype = "";//document.querySelectorAll('.selectButton');
+////selecto buttons
+document.getElementById("gameWord").style.visibility = "hidden"
+var manual = document.querySelector('#manual');
+manual.addEventListener("click", function(e5) {
+    this.style.background = "blue";
+    document.querySelector('#random').style.background = "white";
+    selectWordtype = "manual"
+    document.getElementById("gameWord").style.visibility = "visible"
 
+console.log(selectWordtype);}
+)
 
+var random = document.querySelector('#random');
+random.addEventListener("click", function(e6) {
+    this.style.background = "blue";
+    document.querySelector('#manual').style.background = "white";
+    selectWordtype = "random"
+    document.getElementById("gameWord").style.visibility = "hidden"
+console.log(selectWordtype);}
+)
 
-var words = ['Horse',
-'Pig',
+/*for(let i =0; i < selectWordtype.length; i++) {
+    selectWordtype[i].addEventListener("click", function(e3){
+        //document.getElementById("manual").innerHTML = "_____ _"
+        this.style.background = "blue";
+        this.style.background = "red";
+        console.log(this)
+    }
+    
+    )}
+*/
+
+var words = [
+'Horse',
+'Dude',
 'Dog',
-'Cat',
-'Parrot',
-'Iguana'
+'Truck',
+'bird',
+'Iguana',
+'driving',
+'animal',
+'house',
+'food',
+'farm',
+'automoble'
 ];
 function randomWord(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-for(var x=0; x<20; x++)
+
+
+//for(var x=0; x<20; x++)
     console.log(randomWord(words));
 
-    
+
 
 goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
 evt.preventDefault();

@@ -40,7 +40,27 @@
     background: white;
   }
   
-  .block:hover {
+  .selectors {
+    display: grid;
+    max-width: 1000px;
+    grid-template-columns: 150px 150px;
+    margin: 10px;
+    align-items: center;
+  }
+  .selectButton {
+  
+    width: 150px;
+    height: 20px;
+    align-items: center;
+    text-align: center;
+   
+    font-weight: bold;
+    border: 3px solid black;
+ 
+    background: white;
+  }
+  
+  .select:hover {
     cursor: pointer; 
     background:  yellow;
   }
