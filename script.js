@@ -32,7 +32,7 @@ let boxes = document.querySelectorAll('.block');
 let digit = 0;
 var result = "";
 var wordLength = 0;
-var wordTxt = "";
+var wordTxt = "_ _ _ _ _";
 var letter = "";
 /*
 wordTxt = document.querySelector("#gameWord").placeholder;
@@ -66,7 +66,7 @@ wordTxt = wordTxt.toUpperCase();
 //console.log(this.textContent)
     console.log("digit:  " + digit); 
     console.log("just clicked this letter: " + letter)
-    console.log("this is result after click:  " + result)
+    console.log("this is result after click:" + result)
     console.log("this is wordTxt after click" + wordTxt)
     //var wordTxt = document.querySelector('#gameWord').value
     wordTxt = wordTxt.toUpperCase();
@@ -76,34 +76,50 @@ wordTxt = wordTxt.toUpperCase();
 //while loop here
         //while(digit <= wordLength){
             
-            if(letter == wordTxt.charAt(digit) && digit < wordLength) {
+            if(letter === wordTxt.charAt(digit) && digit < wordLength) {
                console.log("yes sir")
                digit = digit + 1;
                result = result + letter;
                document.querySelector('#wordInput').textContent = result;    
-               console.log("this is wordTxt" + wordTxt) 
-               console.log("this is result:  " + result) 
-                
-                    if (wordTxt === result) {
+               console.log("this is wordTxt:" + wordTxt) 
+               console.log("this is result:" + result) 
+            }    
+                    if (wordTxt == result) {
                     console.log("you won");
                     //document.write("you are a winnerz1")
                     console.log(game)
-       }}
-const resetButton = document.getElementById("resetButton");
+       }
+
+
+       
+    })}
+
+
+///RESET GAME
+
+
+ const resetButton = document.getElementById("resetButton");
     let resetter = document.querySelectorAll(".block")
     
 resetButton.addEventListener("click", function(e1){
+
+
+
+
     console.log("test")
-    result = "";console.log("result reset:  " + result)
+    result = "";
+    document.querySelector('#wordInput').textContent = result;
+    console.log("result reset:  " + result)
     wordLength= 0;
     wordTxt = "";
     console.log("wordTxt reset:  " + wordTxt)
     letter = "";
     digit = 0;
-    //document.querySelector("#gameWord").placeholder.textContent = "Pick a word"
-    wordTxt = document.querySelector("#gameWord").placeholder;
+    document.querySelector("#gameWord").value = "";
+    //document.getElementById("").placeholder = ""
+    //wordTxt = document.querySelector("#gameWord").placeholder;
     //document.querySelector("#gameWord").placeholder = "new word"
-    wordTxt = "new words";
+    //wordTxt = "new words";
     wordLength = wordTxt.length;
 
     for( let i =  0; i < boxes.length; i++) {
@@ -111,14 +127,13 @@ resetButton.addEventListener("click", function(e1){
     }
 })
 
+} //game loop function
 
 
-    })}
 
+)//end event listener for go play button
+   
 
-///RESET GAME
-})
-    
     //let resetter = document.querySelectorAll(".block")
     //for( let i =  0; i < boxes.length; i++) {
       //resetter[i].style.background = "white";  
