@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+ 
+<head>
+<link href='https://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+<script src="/assets/jquery.js"></script>
+<style>
+ 
+
+.beep {
+  width: 5px;
+  height: 800px;
+  border: 5px solid transparent;
+  border-top: 10px solid #777;
+  border-bottom: 80px solid #888;
+  position: relative;
+  left: 140px;
+}
+ 
+@keyframes blink {
+  50% {
+    background: radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    background: -webkit-radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
+}
+@-moz-keyframes blink {
+  50% {
+    background: -moz-radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
+}
+.laser {
+  animation: blink .5s infinite;
+  -webkit-animation: blink .5s infinite;
+  -moz-animation: blink .5s infinite;
+}
+
+.vert {
+  height: 100px;
+  width: 100px;
+  border-top: 800px solid rgb(173, 122, 27);
+  border-left: 75px ;
+  border-right: 75px ;
+
+  position: relative;
+  top: 320px;
+  left: 200px; 
+}
+.horz {
+  height: 100px;
+  width: 100px;
+  border-top: 300px solid rgb(173, 122, 27);
+  border-left: 75px ;
+  border-right: 75px ;
+
+  position: relative;
+  top: -100px;
+  left: 200px; 
+  transform: rotate(90deg);
+}
+.head {
+  background: radial-gradient(circle, rgb(73, 169, 224) 15%, transparent 40%), rgb(50, 186, 228);
+  /*
+  background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5; 
+  background: -webkit-radial-gradient(circle, white 15%, transparent 40%), #cc5;*/
+  background-size: 75px 150px;
+  height: 150px;
+  width: 150px;
+  border-radius: 60px 60px 60px 60px;
+  /*border-bottom: 40px solid #666;*/
+  position: relative;
+  left: 500px;
+}
+ 
+.chest {
+  height: 100px;
+  width: 100px;
+  border-top: 300px solid rgb(39, 54, 197);
+  border-left: 75px ;
+  border-right: 75px ;
+  border-radius: 100px 100px 100px 100px;
+  position: relative;
+  left: 500px; 
+}
+
+.leftarm {
+  height: 40px;
+  width: 180px;
+  background: #ccc;
+  border-radius: 40px;
+  border: 15px solid blue;
+  position: relative;
+  top: -320px;
+  left: 390px;
+ 
+}
+.rightarm {
+
+  height: 40px;
+  width: 180px;
+  background: #ccc;
+  border-radius: 40px;
+  border: 15px solid blue;
+  position: relative;
+  top: -620px;
+  left: 590px;
+  transform: rotate(240deg);
+ 
+}
+.leftfoot {
+  height: 40px;
+  width: 180px;
+  background: #ccc;
+  border-radius: 40px;
+  border: 15px solid #999;
+  position: relative;
+  left: 610px;
+  top: -10px;
+  transform: rotate(240deg);
+}
+  .rightfoot {
+  height: 40px;
+  width: 180px;
+  background: #ccc;
+  border-radius: 40px;
+  border: 15px solid #999;
+  position: relative;
+  left: 510px;
+  top: -20px;
+  z-index: -1;
+  transform: rotate(300deg);
+ 
+}
+body {
+    background: randomRGBA;
+}
+ 
+@keyframes dance {
+  from {
+    left: 800px;
+  }
+}
+ 
+@-webkit-keyframes dance {
+  from {
+    left: 800px;
+  }
+}
+ 
+@-moz-keyframes dance {
+  from {
+    left: 800px;
+  }
+}
+    
+ 
+img {
+  animation: dance 4s infinite;
+  -webkit-animation: dance 4s infinite;
+  -moz-animation: dance 4s infinite;
+  position: absolute;
+  top: 200px;
+  left: 400px;
+}
+</style>
+</head>
+ 
+<body>
+ 
+<div class="hangman">
+  <div class="vert"></div>
+  <div class="horz"></div>
+  <div class="head"></div>
+  <div class="chest">
+    <div class="leftarm"></div>
+    <div class="rightarm"></div>
+  </div>
+  <div class="leftfoot"></div>
+  <div class="rightfoot"></div>
+</div>
+ 
+<button class="flash">laser eyes on/off</button>
+<button class="color">change color!</button>
+<button class="moves">moves</button>
+ 
+<img src="/assets/dance_cotter.gif">
+ 
+<script>
+// When eyes button is clicked, toggle laser class on brain
+$(".flash").click(function() {
+  $(".brain").toggleClass('laser');
+});
+ 
+// When color button is clicked...
+$(".color").click(function() {
+  // assign each named color a random number 0-255
+  var red = Math.floor(Math.random() * 255);
+  var green = Math.floor(Math.random() * 255);
+  var blue = Math.floor(Math.random() * 255);
+//combine three variables into one color
+  var randomRGBA = 'rgba('+red+','+green+','+blue+',1)';
+$("body").css("background", randomRGBA);
+//alert new var
+alert(randomRGBA);
+});
+ 
+$(".moves").click(function() {
+  $("img").toggle();
+});
+ 
+</script>
+</body>
+ 
+ 
+<h2 id="winner">Play Game</h2>
+<button id="resetButton" type="button">Reset Game</button> 

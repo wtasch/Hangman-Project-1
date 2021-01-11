@@ -1,4 +1,102 @@
+.vert {
+  height: 150px;
+  width: 50px;
+  border-top: 570px solid rgb(173, 122, 27);
+  border-left: 10px ;
+  border-right: 20px ;
+  position: absolute;
+  top: 50px;
+  left: 600px; 
+}
+.horz {
+  height: 50px;
+  width: 400px;
+  border-top: 50px solid rgb(173, 122, 27);
+  border-left: 175px ;
+  border-right: 150px ;
+  position: absolute;
+  top: 20px;
+  left: 600px; 
 
+}
+.head {
+  background: rgb(50, 186, 228);
+  height: 100px;
+  width: 100px;
+  border-radius: 100px 100px 60px 60px;
+  position: absolute;
+  top: 100px;
+  left: 870px;
+}
+ 
+.chest {
+  height: 40px;
+  width: 40px;
+  border-top: 200px solid rgb(39, 54, 197);
+  border-left: 75px ;
+  border-right: 75px ;
+  border-radius: 100px 100px 100px 100px;
+  position: absolute;
+  top: 200px;
+  left: 900px; 
+}
+
+.leftarm {
+  height: 30px;
+  width: 150px;
+  background: rgb(223, 183, 97);
+  border-radius: 100px 50px 50px 100px;
+  border: 15px solid blue;
+  position: absolute;
+  top: 150px;
+  left: 740px;
+  transform: rotate(230deg);
+ 
+}
+.rightarm {
+
+  height: 30px;
+  width: 150px;
+  background: rgb(223, 183, 97);
+  border-radius: 50px 100px 100px 50px;
+  border: 15px solid blue;
+  position: absolute;
+  top: 150px;
+  left: 935px;
+  transform: rotate(140deg);
+ 
+}
+.leftfoot {
+  height: 40px;
+  width: 180px;
+  background: rgb(223, 183, 97);
+  border-radius: 100px 50px 50px 100px;
+  border: 15px solid blue; 
+  position: absolute;
+  top: 450px;
+  left: 720px;
+  transform: rotate(120deg);
+}
+  .rightfoot {
+  height: 40px;
+  width: 180px;
+  background: rgb(223, 183, 97);
+  border-radius: 100px 50px 50px 100px;
+  border: 15px solid blue;
+  position: absolute;
+  top: 450px;;
+  left: 900px;
+
+  transform: rotate(65deg);
+ 
+}
+  
+  
+  
+  
+  #banner {
+    width: 500px;
+  }
   #wordInput {
       font-size: 20px;
   }
