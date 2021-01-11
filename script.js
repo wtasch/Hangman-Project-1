@@ -1,6 +1,7 @@
 
 console.log('super code loaded');
 resultsArray = [];
+gameDisplayArray = [];
 
 let boxes = document.querySelectorAll('.block');
 var gameOver = 0;
@@ -21,7 +22,8 @@ manual.addEventListener("click", function(e5) {
     this.style.background = "blue";
     document.querySelector('#random').style.background = "white";
     selectWordtype = "manual"
-    document.getElementById("gameWord").style.visibility = "visible"
+    document.getElementById("gameWord").style.visibility = "visible";
+    gameOver = 1;
 
 console.log(selectWordtype);}
 )
@@ -31,20 +33,10 @@ random.addEventListener("click", function(e6) {
     this.style.background = "blue";
     document.querySelector('#manual').style.background = "white";
     selectWordtype = "random"
-    document.getElementById("gameWord").style.visibility = "hidden"
+    document.getElementById("gameWord").style.visibility = "hidden";
+    gameOver = 1;
 console.log(selectWordtype);}
 )
-
-/*for(let i =0; i < selectWordtype.length; i++) {
-    selectWordtype[i].addEventListener("click", function(e3){
-        //document.getElementById("manual").innerHTML = "_____ _"
-        this.style.background = "blue";
-        this.style.background = "red";
-        console.log(this)
-    }
-    
-    )}
-*/
 
 var words = [
 'Horse',
@@ -64,23 +56,20 @@ function randomWord(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-
-    console.log(randomWord(words));
-
-
-
-goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
+ //start game, big time parantheses here================================START GAME BUTTON
+goButton.addEventListener("click", function(evt) {  
 evt.preventDefault();
-//gameOver = 0;
+resetFunction();
+
 //add random buttons stuff here
-
-
 //Select type button s>>>>>>>>>>>>>>>>>
 manual.addEventListener("click", function(e5) {
     this.style.background = "blue";
     document.querySelector('#random').style.background = "white";
     selectWordtype = "manual"
     document.getElementById("gameWord").style.visibility = "visible"
+    //gameOver = 1;
+    resetFunction();
 
 console.log(selectWordtype);}
 )
@@ -89,21 +78,12 @@ var random = document.querySelector('#random');
 random.addEventListener("click", function(e6) {
     this.style.background = "blue";
     document.querySelector('#manual').style.background = "white";
-    selectWordtype = "random"
-    document.getElementById("gameWord").style.visibility = "hidden"
+    selectWordtype = "random";
+    //gameOver = 1;
+    ressetFunction();
+    document.getElementById("gameWord").style.visibility = "hidden";
 console.log(selectWordtype);}
 )
-
-/*for(let i =0; i < selectWordtype.length; i++) {
-    selectWordtype[i].addEventListener("click", function(e3){
-        //document.getElementById("manual").innerHTML = "_____ _"
-        this.style.background = "blue";
-        this.style.background = "red";
-        console.log(this)
-    }
-    
-    )}
-*/
 
 var words = [
 'Horse',
@@ -123,13 +103,7 @@ function randomWord(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-
-
-//for(var x=0; x<20; x++)
-    console.log(randomWord(words));
-
-
-
+    //console.log(randomWord(words));
 
 //end of random button stuff
 if(gameOver === 1) {
@@ -156,14 +130,15 @@ for(i=0; i < wordTxt.length; i++) {
     for(i=0; i < wordTxt.length; i++) {
         resultsArray.push("_");
     }     
-     
-
-
-
-
-//GAME LOOP
-console.log("start" + gameOver)
-
+    gameDisplayArray = resultsArray.join("  ")
+ 
+    document.getElementById("gameDisplay").innerHTML = gameDisplayArray;
+    document.querySelector("#gameWord").value = "";
+//GAME LOOP++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=======================
+console.log("start   :" + gameOver)
+if(gameOver === 1) {
+    alert("Please Click Reset Game Button game loop");
+ }
 for(let i =0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", function(evt){
 if(gameOver == 0){
@@ -185,40 +160,25 @@ if(gameOver == 0){
                     resultsArray[i] = gameArray[i];                   
                     result = resultsArray.join("");
                     console.log("this is wordTxt" + wordTxt);
-                    document.getElementById("gameDisplay").innerHTML = result;
+                    document.getElementById("gameDisplay").innerHTML = resultsArray.join("  ");
                     console.log(" this result:  " + result)
                     console.log("yes sir");
                     console.log("this is matching leter:  " + gameArray[i]);
                     console.log("this is game array in loop:    " + gameArray);
                     console.log("this is resultsArray in loop:  " + resultsArray);
                     console.log(gameOver)
-                } //reset
-//if(gameOver === 1) {
- //   alert("Please Click Go Play Button");
-//}
+                } 
 
                     
                             if (result == wordTxt) {
                              console.log("you won");
                              gameOver = 1;
-                             
-                             //for( let i =  0; i < boxes.length; i++) {
-                               // resetter[i].style.background = "white";  
-                             // }
+                             resultsArray = [];
+                             gameArray = [];
 
                             }
-
-
                 }//for loop
-
-
-            }       
-
-
-
-
-
-
+            }   //check for gameOver    
     })}
 
 
@@ -226,10 +186,13 @@ if(gameOver == 0){
  const resetButton = document.getElementById("resetButton");
     let resetter = document.querySelectorAll(".block")
     
+    function resetFunction(){
+
+    
+
+
 resetButton.addEventListener("click", function(e1){
 
-
-    ///new reset code here
     document.getElementById("gameDisplay").innerHTML = "_____ _"
     resultsArray = [];
     gameArray = [];
@@ -240,7 +203,7 @@ resetButton.addEventListener("click", function(e1){
     wordLength= 0;
     wordTxt = "";
     letter = "";
-    gameOver = 0;
+    gameOver = 1;
     document.querySelector("#gameWord").value = "";
     wordLength = wordTxt.length;
 
@@ -248,8 +211,9 @@ resetButton.addEventListener("click", function(e1){
       resetter[i].style.background = "white";  
     }
 })
-
+    } //reset Function
 } //game loop function
+
 
 
 
