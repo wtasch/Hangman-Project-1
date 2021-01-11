@@ -14,6 +14,7 @@ var letter = "";
 var results = document.getElementById("gameDisplay");
 const goButton = document.querySelector('#go-btn');
 let selectWordtype = "";//document.querySelectorAll('.selectButton');
+
 //hide hangman elements
 document.querySelector(".vert").style.visibility = "hidden";
 document.querySelector(".horz").style.visibility = "hidden";
@@ -23,7 +24,6 @@ document.querySelector(".leftarm").style.visibility = "hidden";
 document.querySelector(".rightarm").style.visibility = "hidden";
 document.querySelector(".leftfoot").style.visibility = "hidden";
 document.querySelector(".rightfoot").style.visibility = "hidden";
-
 
 ////selecto buttons
 document.getElementById("gameWord").style.visibility = "hidden"
@@ -98,13 +98,21 @@ events = events + 1;
     document.querySelector('#banner').textContent = "Start Playing";
     document.querySelector('#banner').style.background = "green";
     loopCounter = 0;
-
+//hide hangman elements
+document.querySelector(".vert").style.visibility = "hidden";
+document.querySelector(".horz").style.visibility = "hidden";
+document.querySelector(".head").style.visibility = "hidden";
+document.querySelector(".chest").style.visibility = "hidden";
+document.querySelector(".leftarm").style.visibility = "hidden";
+document.querySelector(".rightarm").style.visibility = "hidden";
+document.querySelector(".leftfoot").style.visibility = "hidden";
+document.querySelector(".rightfoot").style.visibility = "hidden";
 
     for( let i =  0; i < boxes.length; i++) {
       resetter[i].style.background = "white";  
     }   
 } //reset Function
-    
+
 
 resetButton.addEventListener("click", function(e1){
 resetFunction();
@@ -205,6 +213,7 @@ clickCounter = (loopCounter/ events)
 
 console.log("this is clickCounter:  " + clickCounter);
 console.log("events:  " + events)
+document.querySelector('#counterDisplay').textContent =clickCounter + " Clicks far. "
 
 
 if(gameOver == 0){
@@ -239,36 +248,48 @@ if(gameOver == 0){
                    // console.log("this is game array in loop:    " + gameArray);
                    // console.log("this is resultsArray in loop:  " + resultsArray);
                   //  console.log(gameOver)
-                    
-                } else {
-                        if(clickCounter === 1) {
-                    document.querySelector(".vert").style.visibility = "visible"
-                    document.querySelector(".horz").style.visibility = "visible"
-                        }
-                        if(clickCounter === 2) {
-                    document.querySelector(".head").style.visibility = "visible"
-                        }
-                        if(clickCounter === 3) {
-                    document.querySelector(".chest").style.visibility = "visible"
-                        }
-                        if(clickCounter === 4) {
-                        document.querySelector(".leftarm").style.visibility = "visible"
-                        }
-                        if(clickCounter === 5) {
-                    document.querySelector(".rightarm").style.visibility = "visible"
-                        }
-                        if(clickCounter === 6) {
-                    document.querySelector(".leftfoot").style.visibility = "visible"
-                        }
-                         if(clickCounter === 7) {
-                    document.querySelector(".rightfoot").style.visibility = "visible"
-                         }
+                
                 }
+                     
+                         
 
                 if (clickCounter > 6){
                     document.querySelector('#banner').textContent = "Game Over, Please Try Again";
                     document.querySelector('#banner').style.background = "red";
             }
+
+
+
+
+
+   if(clickCounter === 1 && letter != gameArray[k]) {
+                            console.log("vert" + letter + " = " + gameArray[k])
+                    document.querySelector(".vert").style.visibility = "visible"
+                    document.querySelector(".horz").style.visibility = "visible"
+                        }
+                        if(clickCounter === 2 && letter != gameArray[k]) {
+                    document.querySelector(".head").style.visibility = "visible"
+                        }
+                        if(clickCounter === 3 && letter != gameArray[k]) {
+                    document.querySelector(".chest").style.visibility = "visible"
+                        }
+                        if(clickCounter === 4 && letter != gameArray[k]) {
+                        document.querySelector(".leftarm").style.visibility = "visible"
+                        }
+                        if(clickCounter === 5 && letter != gameArray[k]) {
+                    document.querySelector(".rightarm").style.visibility = "visible"
+                        }
+                        if(clickCounter === 6 && letter != gameArray[k]) {
+                    document.querySelector(".leftfoot").style.visibility = "visible"
+                        }
+                         if(clickCounter === 7 && letter != gameArray[k]) {
+                    document.querySelector(".rightfoot").style.visibility = "visible"
+                         }
+                         
+
+
+
+
                 if (result == wordTxt) {
                              console.log("you won");
                              gameOver = 1;
