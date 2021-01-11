@@ -1,11 +1,12 @@
 
 console.log('super code loaded');
 resultsArray = [];
-gameArray = [];
 gameDisplayArray = [];
 var clickCounter = 0;
+var loopCounter = 0;
 let boxes = document.querySelectorAll('.block');
 var gameOver = 0;
+var events = 0;
 var result = "";
 var wordLength = 0;
 var wordTxt = "_ _ __";
@@ -61,6 +62,7 @@ function randomWord(arr) {
 goButton.addEventListener("click", function(evt) {  
 evt.preventDefault();
 gameOver = 0;
+events = events + 1;
 
 
 ///RESET GAME++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESET
@@ -82,6 +84,10 @@ gameOver = 0;
     document.querySelector("#gameWord").value = "";
     wordLength = wordTxt.length;
     clickCounter = 0;
+    document.querySelector('#banner').textContent = "Start Playing";
+    document.querySelector('#banner').style.background = "green";
+    loopCounter = 0;
+
 
     for( let i =  0; i < boxes.length; i++) {
       resetter[i].style.background = "white";  
@@ -163,7 +169,7 @@ for(i=0; i < wordTxt.length; i++) {
         alert("Sorry, No Splaces Please");
     }}
  // loop to put dashes in display array
-    for(i=0; i < wordTxt.length; i++) {
+    for(j=0; j < wordTxt.length; j++) {
         resultsArray.push("_");
     }     
     gameDisplayArray = resultsArray.join("  ")
@@ -182,32 +188,35 @@ if(gameOver === 1) {
 
 
 
-} //game loop function
-
-
-
-
-)//end event listener for go play button
-   
 
 
 
 
 
 
+ 
+for(let m =0; m < boxes.length; m++) {
+ 
+    boxes[m].addEventListener("click", function(evt){
+
+loopCounter = (loopCounter)+1 ;
+console.log("loopcounter" + loopCounter);
+
+ 
+clickCounter = (loopCounter/ events)
 
 
+console.log("this is clickCounter:  " + clickCounter);
+console.log("events:  " + events)
 
 
-for(let i =0; i < boxes.length; i++) {
-    boxes[i].addEventListener("click", function(evt){
 if(gameOver == 0){
-    clickCounter = clickCounter + 1;
-    console.log("this is clickCounter:  " + clickCounter);
+    
+    
     letter = this.textContent;
-    console.log("this.textcontent" + this.textContent)
+   // console.log("this.textcontent" + this.textContent)
     wordLength = wordTxt.length;
-    console.log(wordLength)
+   // console.log(wordLength)
     this.style.background = "red";
     wordTxt = wordTxt.toUpperCase();
     if (clickCounter < 8){
@@ -217,21 +226,23 @@ if(gameOver == 0){
 //if(gameOver === 1) {
   //  alert("Please Click Go Play Button"); }                   
 // new code to computer  TWO arrays gameArray & resultsArray>>>>>>>>>>>>>>>>>>
-            for(i=0; i < wordTxt.length; i++) {
+            for(k=0; k < wordTxt.length; k++) {
+                
 
-
-                if(letter == gameArray[i]) {
+                if(letter == gameArray[k]) {
                     this.style.background = "lightgreen";                    
-                    resultsArray[i] = gameArray[i];                   
+                    resultsArray[k] = gameArray[k]; 
+                    console.log("k: " +k)                  
                     result = resultsArray.join("");
-                    console.log("this is wordTxt" + wordTxt);
+                  //  console.log("this is wordTxt" + wordTxt);
                     document.getElementById("gameDisplay").innerHTML = resultsArray.join("  ");
-                    console.log(" this result:  " + result)
-                    console.log("yes sir");
-                    console.log("this is matching leter:  " + gameArray[i]);
-                    console.log("this is game array in loop:    " + gameArray);
-                    console.log("this is resultsArray in loop:  " + resultsArray);
-                    console.log(gameOver)
+                   // console.log(" this result:  " + result)
+                   // console.log("yes sir");
+                   // console.log("this is matching leter:  " + gameArray[k]);
+                   // console.log("this is game array in loop:    " + gameArray);
+                   // console.log("this is resultsArray in loop:  " + resultsArray);
+                  //  console.log(gameOver)
+                    
                 } 
 
                 if (clickCounter > 6){
@@ -247,8 +258,17 @@ if(gameOver == 0){
                             }
                 }//for loop
             }   //check for gameOver    
-    })}
+    })
+}
 
+
+} //game loop function
+
+
+
+
+)//end event listener for go play button
+   
 
     //let resetter = document.querySelectorAll(".block")
     //for( let i =  0; i < boxes.length; i++) {
