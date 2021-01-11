@@ -61,6 +61,7 @@ goButton.addEventListener("click", function(evt) {
 evt.preventDefault();
 gameOver = 0;
 
+
 //add random buttons stuff here
 //Select type button s>>>>>>>>>>>>>>>>>
 manual.addEventListener("click", function(e5) {
