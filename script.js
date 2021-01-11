@@ -1,6 +1,7 @@
 
 console.log('super code loaded');
 resultsArray = [];
+gameArray = [];
 gameDisplayArray = [];
 var clickCounter = 0;
 let boxes = document.querySelectorAll('.block');
@@ -175,6 +176,29 @@ if(gameOver === 1) {
     alert("Please Click Reset Game Button game loop");
  }
 
+
+
+
+
+
+
+} //game loop function
+
+
+
+
+)//end event listener for go play button
+   
+
+
+
+
+
+
+
+
+
+
 for(let i =0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", function(evt){
 if(gameOver == 0){
@@ -225,14 +249,6 @@ if(gameOver == 0){
             }   //check for gameOver    
     })}
 
-
-} //game loop function
-
-
-
-
-)//end event listener for go play button
-   
 
     //let resetter = document.querySelectorAll(".block")
     //for( let i =  0; i < boxes.length; i++) {
