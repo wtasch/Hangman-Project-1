@@ -283,7 +283,6 @@ if(gameOver == 0){
     })
 }
 
-
 } //game loop function
 
 
