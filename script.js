@@ -2,7 +2,7 @@
 console.log('super code loaded');
 resultsArray = [];
 gameDisplayArray = [];
-
+var clickCounter = 0;
 let boxes = document.querySelectorAll('.block');
 var gameOver = 0;
 var result = "";
@@ -60,6 +60,40 @@ function randomWord(arr) {
 goButton.addEventListener("click", function(evt) {  
 evt.preventDefault();
 gameOver = 0;
+
+
+///RESET GAME++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESET
+ const resetButton = document.getElementById("resetButton");
+    let resetter = document.querySelectorAll(".block")
+    
+    function resetFunction(){
+    document.getElementById("gameDisplay").innerHTML = "_____ _"
+    resultsArray = [];
+    gameArray = [];
+    console.log("this is reuslt array in reset: " + resultsArray)
+    console.log("this is game array in reset: " + gameArray)
+    result = "";
+    document.querySelector('#wordInput').textContent = result;
+    wordLength= 0;
+    wordTxt = "";
+    letter = "";
+    gameOver = 1;
+    document.querySelector("#gameWord").value = "";
+    wordLength = wordTxt.length;
+    clickCounter = 0;
+
+    for( let i =  0; i < boxes.length; i++) {
+      resetter[i].style.background = "white";  
+    }   
+} //reset Function
+    
+
+
+resetButton.addEventListener("click", function(e1){
+resetFunction();
+
+})
+    
 
 
 //add random buttons stuff here
@@ -140,16 +174,22 @@ console.log("start   :" + gameOver)
 if(gameOver === 1) {
     alert("Please Click Reset Game Button game loop");
  }
+
 for(let i =0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", function(evt){
 if(gameOver == 0){
-    
+    clickCounter = clickCounter + 1;
+    console.log("this is clickCounter:  " + clickCounter);
     letter = this.textContent;
     console.log("this.textcontent" + this.textContent)
     wordLength = wordTxt.length;
     console.log(wordLength)
     this.style.background = "red";
     wordTxt = wordTxt.toUpperCase();
+    if (clickCounter < 8){
+        document.querySelector('#banner').textContent = "congnitive Load = " +wordLength;
+        document.querySelector('#banner').style.background = "Blue";
+    }
 //if(gameOver === 1) {
   //  alert("Please Click Go Play Button"); }                   
 // new code to computer  TWO arrays gameArray & resultsArray>>>>>>>>>>>>>>>>>>
@@ -170,8 +210,11 @@ if(gameOver == 0){
                     console.log(gameOver)
                 } 
 
-                    
-                            if (result == wordTxt) {
+                if (clickCounter > 6){
+                    document.querySelector('#banner').textContent = "Game Over, Please Try Again";
+                    document.querySelector('#banner').style.background = "red";
+            }
+                if (result == wordTxt) {
                              console.log("you won");
                              gameOver = 1;
                              resultsArray = [];
@@ -183,37 +226,6 @@ if(gameOver == 0){
     })}
 
 
-///RESET GAME++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESET
- const resetButton = document.getElementById("resetButton");
-    let resetter = document.querySelectorAll(".block")
-    
-    function resetFunction(){
-    document.getElementById("gameDisplay").innerHTML = "_____ _"
-    resultsArray = [];
-    gameArray = [];
-    console.log("this is reuslt array in reset: " + resultsArray)
-    console.log("this is game array in reset: " + gameArray)
-    result = "";
-    document.querySelector('#wordInput').textContent = result;
-    wordLength= 0;
-    wordTxt = "";
-    letter = "";
-    gameOver = 1;
-    document.querySelector("#gameWord").value = "";
-    wordLength = wordTxt.length;
-
-    for( let i =  0; i < boxes.length; i++) {
-      resetter[i].style.background = "white";  
-    }   
-} //reset Function
-    
-
-
-resetButton.addEventListener("click", function(e1){
-resetFunction();
-
-})
-    
 } //game loop function
 
 
