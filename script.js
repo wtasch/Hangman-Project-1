@@ -11,6 +11,7 @@ var result = "";
 var wordLength = 0;
 var wordTxt = "_ _ __";
 var letter = "";
+var noMatched = 0;
 var results = document.getElementById("gameDisplay");
 const goButton = document.querySelector('#go-btn');
 let selectWordtype = "";//document.querySelectorAll('.selectButton');
@@ -203,17 +204,14 @@ if(gameOver === 1) {
 for(let m =0; m < boxes.length; m++) {
  
     boxes[m].addEventListener("click", function(evt){
-
-loopCounter = (loopCounter)+1 ;
-console.log("loopcounter" + loopCounter);
-
- 
+    loopCounter = (loopCounter)+1 ;
+    console.log("loopcounter" + loopCounter); 
 clickCounter = (loopCounter/ events)
 
 
 console.log("this is clickCounter:  " + clickCounter);
 console.log("events:  " + events)
-document.querySelector('#counterDisplay').textContent =clickCounter + " Clicks far. "
+document.querySelector('#counterDisplay').textContent ="Game Counter:  " + clickCounter + " Clicks far..."
 
 
 if(gameOver == 0){
@@ -223,8 +221,16 @@ if(gameOver == 0){
    // console.log("this.textcontent" + this.textContent)
     wordLength = wordTxt.length;
    // console.log(wordLength)
-    this.style.background = "red";
+    //this.style.background = "red";
     wordTxt = wordTxt.toUpperCase();
+    document.querySelector(".vert").style.visibility = "visible"
+    document.querySelector(".horz").style.visibility = "visible"
+    document.querySelector(".head").style.visibility = "visible"
+    document.querySelector(".chest").style.visibility = "visible"
+    document.querySelector(".leftarm").style.visibility = "visible"
+    document.querySelector(".rightarm").style.visibility = "visible"
+    document.querySelector(".leftfoot").style.visibility = "visible"
+    document.querySelector(".rightfoot").style.visibility = "visible"
     if (clickCounter < 8){
         document.querySelector('#banner').textContent = "Congnitive Load = " +wordLength;
         document.querySelector('#banner').style.background = "yellow";
@@ -248,10 +254,52 @@ if(gameOver == 0){
                    // console.log("this is game array in loop:    " + gameArray);
                    // console.log("this is resultsArray in loop:  " + resultsArray);
                   //  console.log(gameOver)
+
+                  }
+                  if(letter != gameArray[k]) {
+                      noMatched = 1;
+                      
+                  }
+                console.log("noMatched:  " + noMatched)
                 
-                }
-                     
+                        if(clickCounter === 1 && letter == gameArray[k]) {
+                            console.log("vert" + letter + " = " + gameArray[k])
+
+                    document.querySelector(".head").style.visibility = "hidden";
+                    document.querySelector(".chest").style.visibility = "hidden";
+                    document.querySelector(".leftarm").style.visibility = "hidden";
+                    document.querySelector(".rightarm").style.visibility = "hidden";
+                    document.querySelector(".leftfoot").style.visibility = "hidden";
+                    document.querySelector(".rightfoot").style.visibility = "hidden";
+
+
+
+                        }
+                        if(clickCounter === 2 && letter == gameArray[k]) {
+  
+                            document.querySelector(".chest").style.visibility = "hidden";
+                            document.querySelector(".leftarm").style.visibility = "hidden";
+                            document.querySelector(".rightarm").style.visibility = "hidden";
+                            document.querySelector(".leftfoot").style.visibility = "hidden";
+                            document.querySelector(".rightfoot").style.visibility = "hidden";
+                        }
+                        if(clickCounter === 3 && letter == gameArray[k]) {
+                    document.querySelector(".chest").style.visibility = "hidden";
+                        }
+                        if(clickCounter === 4 && letter === gameArray[k]) {
+                        document.querySelector(".leftarm").style.visibility = "hidden";
+                        }
+                        if(clickCounter === 5 && letter === gameArray[k]) {
+                    document.querySelector(".rightarm").style.visibility = "hidden";
+                        }
+                        if(clickCounter === 6 && letter === gameArray[k]) {
+                    document.querySelector(".leftfoot").style.visibility = "hidden";
+                        }
+                         if(clickCounter === 7 && letter === gameArray[k]){
+                    document.querySelector(".rightfoot").style.visibility = "hidden";
+                         }
                          
+                         noMatched = 0;
 
                 if (clickCounter > 6){
                     document.querySelector('#banner').textContent = "Game Over, Please Try Again";
@@ -262,30 +310,7 @@ if(gameOver == 0){
 
 
 
-   if(clickCounter === 1 && letter != gameArray[k]) {
-                            console.log("vert" + letter + " = " + gameArray[k])
-                    document.querySelector(".vert").style.visibility = "visible"
-                    document.querySelector(".horz").style.visibility = "visible"
-                        }
-                        if(clickCounter === 2 && letter != gameArray[k]) {
-                    document.querySelector(".head").style.visibility = "visible"
-                        }
-                        if(clickCounter === 3 && letter != gameArray[k]) {
-                    document.querySelector(".chest").style.visibility = "visible"
-                        }
-                        if(clickCounter === 4 && letter != gameArray[k]) {
-                        document.querySelector(".leftarm").style.visibility = "visible"
-                        }
-                        if(clickCounter === 5 && letter != gameArray[k]) {
-                    document.querySelector(".rightarm").style.visibility = "visible"
-                        }
-                        if(clickCounter === 6 && letter != gameArray[k]) {
-                    document.querySelector(".leftfoot").style.visibility = "visible"
-                        }
-                         if(clickCounter === 7 && letter != gameArray[k]) {
-                    document.querySelector(".rightfoot").style.visibility = "visible"
-                         }
-                         
+
 
 
 
