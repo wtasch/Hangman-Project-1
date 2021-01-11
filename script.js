@@ -14,6 +14,68 @@ let selectWordtype = "";//document.querySelectorAll('.selectButton');
 ////selecto buttons
 document.getElementById("gameWord").style.visibility = "hidden"
 var manual = document.querySelector('#manual');
+
+
+//Select type button s>>>>>>>>>>>>>>>>>
+manual.addEventListener("click", function(e5) {
+    this.style.background = "blue";
+    document.querySelector('#random').style.background = "white";
+    selectWordtype = "manual"
+    document.getElementById("gameWord").style.visibility = "visible"
+
+console.log(selectWordtype);}
+)
+
+var random = document.querySelector('#random');
+random.addEventListener("click", function(e6) {
+    this.style.background = "blue";
+    document.querySelector('#manual').style.background = "white";
+    selectWordtype = "random"
+    document.getElementById("gameWord").style.visibility = "hidden"
+console.log(selectWordtype);}
+)
+
+/*for(let i =0; i < selectWordtype.length; i++) {
+    selectWordtype[i].addEventListener("click", function(e3){
+        //document.getElementById("manual").innerHTML = "_____ _"
+        this.style.background = "blue";
+        this.style.background = "red";
+        console.log(this)
+    }
+    
+    )}
+*/
+
+var words = [
+'Horse',
+'Dude',
+'Dog',
+'Truck',
+'bird',
+'Iguana',
+'driving',
+'animal',
+'house',
+'food',
+'farm',
+'automoble'
+];
+function randomWord(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+
+    console.log(randomWord(words));
+
+
+
+goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
+evt.preventDefault();
+//gameOver = 0;
+//add random buttons stuff here
+
+
+//Select type button s>>>>>>>>>>>>>>>>>
 manual.addEventListener("click", function(e5) {
     this.style.background = "blue";
     document.querySelector('#random').style.background = "white";
@@ -68,10 +130,8 @@ function randomWord(arr) {
 
 
 
-goButton.addEventListener("click", function(evt) {   //start game, big time parantheses here
-evt.preventDefault();
-//gameOver = 0;
 
+//end of random button stuff
 if(gameOver === 1) {
    alert("Please Click Reset Game Button");
 }
@@ -87,7 +147,7 @@ wordTxt = wordTxt.toUpperCase();
 var gameArray = wordTxt.split("");
 
 //check for spaces
-console.log("game arry here" + gameArray)
+console.log("game arry here after" + gameArray)
 for(i=0; i < wordTxt.length; i++) {
     if(gameArray[i] == " "){
         alert("Sorry, No Splaces Please");
@@ -97,6 +157,10 @@ for(i=0; i < wordTxt.length; i++) {
         resultsArray.push("_");
     }     
      
+
+
+
+
 //GAME LOOP
 console.log("start" + gameOver)
 
@@ -104,10 +168,8 @@ for(let i =0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", function(evt){
 if(gameOver == 0){
     
-
-
-
     letter = this.textContent;
+    console.log("this.textcontent" + this.textContent)
     wordLength = wordTxt.length;
     console.log(wordLength)
     this.style.background = "red";
@@ -118,14 +180,11 @@ if(gameOver == 0){
             for(i=0; i < wordTxt.length; i++) {
 
 
-
-
-
                 if(letter == gameArray[i]) {
                     this.style.background = "lightgreen";                    
                     resultsArray[i] = gameArray[i];                   
                     result = resultsArray.join("");
-                    console.log(wordTxt);
+                    console.log("this is wordTxt" + wordTxt);
                     document.getElementById("gameDisplay").innerHTML = result;
                     console.log(" this result:  " + result)
                     console.log("yes sir");
@@ -150,7 +209,7 @@ if(gameOver == 0){
                             }
 
 
-                }
+                }//for loop
 
 
             }       
@@ -173,6 +232,9 @@ resetButton.addEventListener("click", function(e1){
     ///new reset code here
     document.getElementById("gameDisplay").innerHTML = "_____ _"
     resultsArray = [];
+    gameArray = [];
+    console.log("this is reuslt array in reset: " + resultsArray)
+    console.log("this is game array in reset: " + gameArray)
     result = "";
     document.querySelector('#wordInput').textContent = result;
     wordLength= 0;

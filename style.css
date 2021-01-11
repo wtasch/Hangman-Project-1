@@ -2,6 +2,19 @@
   #wordInput {
       font-size: 20px;
   }
+   #gameWord {
+      font-size: 20px;
+  }
+  #gameDisplay {
+    font-weight: bold;
+    background: none;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+
+    
+
+  }
   
   button {
     outline: none;
@@ -64,7 +77,7 @@
     cursor: pointer; 
     background:  yellow;
   }
-  .box1 {
+  .block:hover {
     background: yellow;
   }
   /*from starter */
