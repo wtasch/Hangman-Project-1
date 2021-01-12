@@ -277,11 +277,11 @@ if(gameOver == 0){
                   
                   
                   if(events <9){  noMatchCounter = (noMatchCounter+ 1) }
-                 // else {noMatchCounter = noMatchCounter + 1;
+                  //else {noMatchCounter = noMatchCounter + 1;
                 //  noMatchCounter = noMatchCounter - (loopCounter/events);
                  noMatchCounter = clickCounter - numberMatched//}
                 
-                }}
+                }
                 clickCounter = (loopCounter/ events)
                 console.log("noMatched:  " + noMatched)
                 console.log("noMatchCounter:  " + noMatchCounter)
