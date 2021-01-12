@@ -13,6 +13,7 @@ var wordTxt = "_ _ __";
 var letter = "";
 var noMatched = 0;
 var noMatchCounter = 0;
+var numberMatched = 0;
 var results = document.getElementById("gameDisplay");
 const goButton = document.querySelector('#go-btn');
 let selectWordtype = "";//document.querySelectorAll('.selectButton');
@@ -83,7 +84,7 @@ events = events + 1;
     let resetter = document.querySelectorAll(".block")
     
     function resetFunction(){
-    document.getElementById("gameDisplay").innerHTML = "_____ _"
+    document.getElementById("gameDisplay").innerHTML = ""
     resultsArray = [];
     gameArray = [];
     console.log("this is reuslt array in reset: " + resultsArray)
@@ -98,6 +99,7 @@ events = events + 1;
     wordLength = wordTxt.length;
     clickCounter = 0;
     noMatchCounter = 0;
+    numberMatched = 0;
     document.querySelector('#banner').textContent = "Start Playing";
     document.querySelector('#banner').style.background = "green";
     loopCounter = 0;
@@ -215,21 +217,9 @@ clickCounter = (loopCounter/ events)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 console.log("this is clickCounter:  " + clickCounter);
 console.log("events:  " + events)
-document.querySelector('#counterDisplay').textContent ="Game Counter:  " + clickCounter + " Clicks far..."
+
 
 
 if(gameOver == 0){
@@ -274,23 +264,32 @@ if(gameOver == 0){
                    // console.log("this is game array in loop:    " + gameArray);
                    // console.log("this is resultsArray in loop:  " + resultsArray);
                   //  console.log(gameOver)
-
+                    numberMatched = numberMatched + 1;
+                
                   }
                   if(letter != gameArray[k]) {
-                      noMatched = noMatched + 1;                                          
-                  }
+                      noMatched = noMatched + 1; 
+                      
+                      
+                      
+                  
 
                   if(noMatched == wordLength){                                        
-                  noMatchCounter = (noMatchCounter+ 1)
-                  noMatchCounter = (loopCounter/events);
-                 // noMatchCounter = loopCounter/events - noMatchCounter
-                }
+                  
+                  
+                  if(events == 1){  noMatchCounter = (noMatchCounter+ 1) }
+                  else {
+                //  noMatchCounter = noMatchCounter - (loopCounter/events);
+                 noMatchCounter = clickCounter - numberMatched//}
+                
+                }}}
                 console.log("noMatched:  " + noMatched)
                 console.log("noMatchCounter:  " + noMatchCounter)
                 console.log("word length:  " + wordLength)
                 console.log("clickcounter:  " + clickCounter)
                 console.log("loopCounter:  " + loopCounter)
                 console.log("event:  " + events)
+                console.log("number match:  " + numberMatched)
 
 
 
@@ -320,11 +319,11 @@ if(gameOver == 0){
                          
                          //noMatched = 0;
 
-                if (clickCounter > 6){
+                if (noMatchCounter > 6){
                     document.querySelector('#banner').textContent = "Game Over, Please Try Again";
                     document.querySelector('#banner').style.background = "red";
             }
-
+document.querySelector('#counterDisplay').textContent ="Game Counter:  You have  " + (7 - noMatchCounter) + " So Far..."
 
                 if (result == wordTxt) {
                              console.log("you won");
