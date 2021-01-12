@@ -276,8 +276,8 @@ if(gameOver == 0){
                   if(noMatched == wordLength){                                        
                   
                   
-                  if(events === 1){  noMatchCounter = (noMatchCounter+ 1) }
-                  else {noMatchCounter = noMatchCounter + 1;
+                  if(events <9){  noMatchCounter = (noMatchCounter+ 1) }
+                 // else {noMatchCounter = noMatchCounter + 1;
                 //  noMatchCounter = noMatchCounter - (loopCounter/events);
                  noMatchCounter = clickCounter - numberMatched//}
                 
