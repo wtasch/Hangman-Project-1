@@ -194,9 +194,9 @@ for(i=0; i < wordTxt.length; i++) {
         resultsArray.push("_");
     }     
     gameDisplayArray = resultsArray.join("  ")
- 
+ document.querySelector("#gameWord").value = "Start Clicking Letters";
     document.getElementById("gameDisplay").innerHTML = gameDisplayArray;
-    document.querySelector("#gameWord").value = "";
+    //document.querySelector("#gameWord").value = "";
 //GAME LOOP++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=======================
 console.log("start   :" + gameOver)
 if(gameOver === 1) {
@@ -212,6 +212,19 @@ for(let m =0; m < boxes.length; m++) {
     console.log("loopcounter" + loopCounter); 
 clickCounter = (loopCounter/ events)
 //var noMatchCounter = wordLength
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 console.log("this is clickCounter:  " + clickCounter);
@@ -268,11 +281,16 @@ if(gameOver == 0){
                   }
 
                   if(noMatched == wordLength){                                        
-                  noMatchCounter = noMatchCounter + 1;
+                  noMatchCounter = (noMatchCounter+ 1)
+                  noMatchCounter = (loopCounter/events);
+                 // noMatchCounter = loopCounter/events - noMatchCounter
                 }
                 console.log("noMatched:  " + noMatched)
                 console.log("noMatchCounter:  " + noMatchCounter)
                 console.log("word length:  " + wordLength)
+                console.log("clickcounter:  " + clickCounter)
+                console.log("loopCounter:  " + loopCounter)
+                console.log("event:  " + events)
 
 
 
