@@ -12,6 +12,7 @@ var wordLength = 0;
 var wordTxt = "_ _ __";
 var letter = "";
 var noMatched = 0;
+var noMatchCounter = 0;
 var results = document.getElementById("gameDisplay");
 const goButton = document.querySelector('#go-btn');
 let selectWordtype = "";//document.querySelectorAll('.selectButton');
@@ -96,10 +97,12 @@ events = events + 1;
     document.querySelector("#gameWord").value = "";
     wordLength = wordTxt.length;
     clickCounter = 0;
+    noMatchCounter = 0;
     document.querySelector('#banner').textContent = "Start Playing";
     document.querySelector('#banner').style.background = "green";
     loopCounter = 0;
 //hide hangman elements
+/*
 document.querySelector(".vert").style.visibility = "hidden";
 document.querySelector(".horz").style.visibility = "hidden";
 document.querySelector(".head").style.visibility = "hidden";
@@ -108,6 +111,7 @@ document.querySelector(".leftarm").style.visibility = "hidden";
 document.querySelector(".rightarm").style.visibility = "hidden";
 document.querySelector(".leftfoot").style.visibility = "hidden";
 document.querySelector(".rightfoot").style.visibility = "hidden";
+*/
 
     for( let i =  0; i < boxes.length; i++) {
       resetter[i].style.background = "white";  
@@ -208,6 +212,7 @@ for(let m =0; m < boxes.length; m++) {
     noMatched = 0;
     console.log("loopcounter" + loopCounter); 
 clickCounter = (loopCounter/ events)
+//var noMatchCounter = wordLength
 
 
 console.log("this is clickCounter:  " + clickCounter);
@@ -222,7 +227,7 @@ if(gameOver == 0){
    // console.log("this.textcontent" + this.textContent)
     wordLength = wordTxt.length;
    // console.log(wordLength)
-    //this.style.background = "red";
+    this.style.background = "red";
     wordTxt = wordTxt.toUpperCase();
    /*
     document.querySelector(".vert").style.visibility = "visible"
@@ -260,15 +265,25 @@ if(gameOver == 0){
 
                   }
                   if(letter != gameArray[k]) {
-                      noMatched = noMatched + 1;
-                      
+                      noMatched = noMatched + 1;                                          
                   }
+
+                  if(noMatched == wordLength){                                        
+                  noMatchCounter = noMatchCounter + 1;
+                }
                 console.log("noMatched:  " + noMatched)
-                
-                        if(clickCounter === 1 && noMatched == wordLength) {
+                console.log("noMatchCounter:  " + noMatchCounter)
+                console.log("word length:  " + wordLength)
+                      /*  if(noMatched == wordLength) {
                             console.log("vert" + letter + " = " + gameArray[k])
-                            document.querySelector(".vert").style.visibility = "hidden";
+                            document.querySelector(".vert").style.visibility = "visible";
+                            document.querySelector(".horz").style.visibility = "visible";
                         }
+                        if(clickCounter === 2 && letter != gameArray[k]) {
+  
+                            document.querySelector(".chest").style.visibility = "hidden";
+                        }*/
+                        /*
                     document.querySelector(".head").style.visibility = "hidden";
                     document.querySelector(".chest").style.visibility = "hidden";
                     document.querySelector(".leftarm").style.visibility = "hidden";
@@ -316,30 +331,32 @@ if(gameOver == 0){
                                 }
         
 
+*/
 
 
 
 
-
-
-
-
-
-
-                        if(clickCounter === 3 && letter == gameArray[k]) {
-                    document.querySelector(".chest").style.visibility = "hidden";
+                         if(noMatchCounter === 1) {
+                     document.querySelector(".vert").style.visibility = "visible";
+                     document.querySelector(".horz").style.visibility = "visible";
                         }
-                        if(clickCounter === 4 && letter === gameArray[k]) {
-                        document.querySelector(".leftarm").style.visibility = "hidden";
+                       if(noMatchCounter === 2) {
+                     document.querySelector(".head").style.visibility = "visible";
+                         }
+                        if(noMatchCounter === 3) {
+                    document.querySelector(".chest").style.visibility = "visible";
                         }
-                        if(clickCounter === 5 && letter === gameArray[k]) {
-                    document.querySelector(".rightarm").style.visibility = "hidden";
+                        if(noMatchCounter === 4) {
+                        document.querySelector(".leftarm").style.visibility = "visible";
                         }
-                        if(clickCounter === 6 && letter === gameArray[k]) {
-                    document.querySelector(".leftfoot").style.visibility = "hidden";
+                        if(noMatchCounter === 5) {
+                    document.querySelector(".rightarm").style.visibility = "visible";
                         }
-                         if(clickCounter === 7 && letter === gameArray[k]){
-                    document.querySelector(".rightfoot").style.visibility = "hidden";
+                        if(noMatchCounter === 6) {
+                    document.querySelector(".leftfoot").style.visibility = "visible";
+                        }
+                         if(noMatchCounter === 7){
+                    document.querySelector(".rightfoot").style.visibility = "visible";
                          }
                          
                          //noMatched = 0;
