@@ -274,64 +274,6 @@ if(gameOver == 0){
                 console.log("noMatched:  " + noMatched)
                 console.log("noMatchCounter:  " + noMatchCounter)
                 console.log("word length:  " + wordLength)
-                      /*  if(noMatched == wordLength) {
-                            console.log("vert" + letter + " = " + gameArray[k])
-                            document.querySelector(".vert").style.visibility = "visible";
-                            document.querySelector(".horz").style.visibility = "visible";
-                        }
-                        if(clickCounter === 2 && letter != gameArray[k]) {
-  
-                            document.querySelector(".chest").style.visibility = "hidden";
-                        }*/
-                        /*
-                    document.querySelector(".head").style.visibility = "hidden";
-                    document.querySelector(".chest").style.visibility = "hidden";
-                    document.querySelector(".leftarm").style.visibility = "hidden";
-                    document.querySelector(".rightarm").style.visibility = "hidden";
-                    document.querySelector(".leftfoot").style.visibility = "hidden";
-                    document.querySelector(".rightfoot").style.visibility = "hidden";
-
-
-
-                        //}
-                        if(clickCounter === 1 && letter == gameArray[k]) {
-                            console.log("vert" + letter + " = " + gameArray[k])
-                    document.querySelector(".vert").style.visibility = "hidden";
-                    document.querySelector(".horz").style.visibility = "hidden";        
-                    document.querySelector(".head").style.visibility = "hidden";
-                    document.querySelector(".chest").style.visibility = "hidden";
-                    document.querySelector(".leftarm").style.visibility = "hidden";
-                    document.querySelector(".rightarm").style.visibility = "hidden";
-                    document.querySelector(".leftfoot").style.visibility = "hidden";
-                    document.querySelector(".rightfoot").style.visibility = "hidden";
-
-                        }
-
-
-
-                      if(clickCounter === 2 && letter != gameArray[k]) {
-  
-                    document.querySelector(".chest").style.visibility = "hidden";
-                    document.querySelector(".leftarm").style.visibility = "hidden";
-                    document.querySelector(".rightarm").style.visibility = "hidden";
-                    document.querySelector(".leftfoot").style.visibility = "hidden";
-                    document.querySelector(".rightfoot").style.visibility = "hidden";
-                        }
-
-
-                        if(clickCounter === 2 && letter == gameArray[k]) {
-                            document.querySelector(".vert").style.visibility = "hidden";
-                            document.querySelector(".horz").style.visibility = "hidden";        
-                            document.querySelector(".head").style.visibility = "hidden";
-                            document.querySelector(".chest").style.visibility = "hidden";
-                            document.querySelector(".leftarm").style.visibility = "hidden";
-                            document.querySelector(".rightarm").style.visibility = "hidden";
-                            document.querySelector(".leftfoot").style.visibility = "hidden";
-                            document.querySelector(".rightfoot").style.visibility = "hidden";
-                                }
-        
-
-*/
 
 
 
