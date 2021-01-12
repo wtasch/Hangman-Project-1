@@ -258,20 +258,4 @@ section.hero p {
   width: 200px;
 }
 
-.word {
-  list-style-type: none;
-  margin: 15px;
-  padding: 4px 25px 4px 0;
-  background: #eee;
-  border: 1px solid #ccc;
-}
-
-.word blockquote {
-  font: 1.7em 'Pinyon Script', cursive;
-}
-
-.word p {
-  text-align: right;
-  font-style: italic;
-}
 
