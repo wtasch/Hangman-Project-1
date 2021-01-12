@@ -351,4 +351,4 @@ if(gameOver == 0){
         //        if(spot === 1) {game.b1 = 2}
         // else if  (spot === 2) {game.b2 = 2}
 
-    //}}
+    
