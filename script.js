@@ -264,7 +264,7 @@ if(gameOver == 0){
                    // console.log("this is game array in loop:    " + gameArray);
                    // console.log("this is resultsArray in loop:  " + resultsArray);
                   //  console.log(gameOver)
-                    numberMatched = numberMatched + 1;
+                    
                 
                   }
                   if(letter != gameArray[k]) {
@@ -277,8 +277,8 @@ if(gameOver == 0){
                   if(noMatched == wordLength){                                        
                   
                   
-                  if(events == 1){  noMatchCounter = (noMatchCounter+ 1) }
-                  else {
+                  if(events === 1){  noMatchCounter = (noMatchCounter+ 1) }
+                  else {noMatchCounter = noMatchCounter + 1;
                 //  noMatchCounter = noMatchCounter - (loopCounter/events);
                  noMatchCounter = clickCounter - numberMatched//}
                 
