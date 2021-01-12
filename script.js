@@ -123,8 +123,7 @@ resetButton.addEventListener("click", function(e1){
 resetFunction();
 
 })
-    
-
+  
 //add random buttons stuff here
 //Select type button s>>>>>>>>>>>>>>>>>
 manual.addEventListener("click", function(e5) {
