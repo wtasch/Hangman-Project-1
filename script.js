@@ -211,8 +211,7 @@ for(let m =0; m < boxes.length; m++) {
     boxes[m].addEventListener("click", function(evt){
     loopCounter = (loopCounter)+1 ;
     noMatched = 0;
-    console.log("loopcounter" + loopCounter); 
-clickCounter = (loopCounter/ events)
+
 //var noMatchCounter = wordLength
 
 
@@ -269,7 +268,7 @@ if(gameOver == 0){
                   }
                   if(letter != gameArray[k]) {
                       noMatched = noMatched + 1; 
-                      
+                 }     
                       
                       
                   
@@ -282,7 +281,8 @@ if(gameOver == 0){
                 //  noMatchCounter = noMatchCounter - (loopCounter/events);
                  noMatchCounter = clickCounter - numberMatched//}
                 
-                }}}
+                }}
+                clickCounter = (loopCounter/ events)
                 console.log("noMatched:  " + noMatched)
                 console.log("noMatchCounter:  " + noMatchCounter)
                 console.log("word length:  " + wordLength)
@@ -290,6 +290,8 @@ if(gameOver == 0){
                 console.log("loopCounter:  " + loopCounter)
                 console.log("event:  " + events)
                 console.log("number match:  " + numberMatched)
+   // console.log("loopcounter" + loopCounter); 
+    
 
 
 
