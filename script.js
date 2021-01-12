@@ -323,31 +323,7 @@ if(gameOver == 0){
 }
 
 } //game loop function
-
-
-
-
 )//end event listener for go play button
    
 
-    //let resetter = document.querySelectorAll(".block")
-    //for( let i =  0; i < boxes.length; i++) {
-      //resetter[i].style.background = "white";  
-      //document.getElementById('winner').textContent = "Start Playing"};
-
-        
-
-    //const checkBlue = document.querySelector('.block').innerHTML;
-    //console.log(checkBlue)
-  
-    
-    //if(player === 0) {
-       // this.style.background = "red";
-       // player = 1;
-       // document.getElementById('winner').textContent = "blue Player's Turn";
-        //let letter = i + 1;
-      
-        //        if(spot === 1) {game.b1 = 2}
-        // else if  (spot === 2) {game.b2 = 2}
-
-    
+   
