@@ -275,14 +275,3 @@ section.hero p {
   font-style: italic;
 }
 
-footer {
-  grid-column: span 2;
-  padding: 0 10px;
-  background: #333;
-  color: #fff;
-}
-
-.content {
-  padding: 10px;
-}
-  
