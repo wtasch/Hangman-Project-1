@@ -102,7 +102,7 @@ events = events + 1;
     document.querySelector('#banner').style.background = "green";
     loopCounter = 0;
 //hide hangman elements
-/*
+
 document.querySelector(".vert").style.visibility = "hidden";
 document.querySelector(".horz").style.visibility = "hidden";
 document.querySelector(".head").style.visibility = "hidden";
@@ -111,7 +111,7 @@ document.querySelector(".leftarm").style.visibility = "hidden";
 document.querySelector(".rightarm").style.visibility = "hidden";
 document.querySelector(".leftfoot").style.visibility = "hidden";
 document.querySelector(".rightfoot").style.visibility = "hidden";
-*/
+
 
     for( let i =  0; i < boxes.length; i++) {
       resetter[i].style.background = "white";  
