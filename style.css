@@ -232,30 +232,6 @@ section.hero blockquote {
   margin-bottom: 0;
 }
 
-section.hero p {
-  font-style: italic;
-}
 
-.form input, .form textarea {
-  width: 90%;
-  margin: 5px 0;
-  padding: 5px;
-  font-size: 110%;
-}
-
-.form textbox {
-  height: 80px;
-}
-
-.form label {
-  font-weight: bold;
-}
-
-#save-btn {
-  background: #000;
-  color: #fff;
-  padding: 5px;
-  width: 200px;
-}
 
 
