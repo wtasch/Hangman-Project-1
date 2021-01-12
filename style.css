@@ -218,11 +218,12 @@ nav ul li a {
   text-decoration: none;
 }
 
-section.hero {
+body {
   grid-column: span 2;
   background-image: url(http://getwallpapers.com/wallpaper/full/2/e/b/1406291-cool-inspirational-background-pictures-1920x1200.jpg);
   background-repeat: no-repeat;
   background-position: 0 65%;
+  width: 1000px;
   background-size: cover;
   text-align: center;
 }
