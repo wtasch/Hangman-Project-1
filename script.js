@@ -212,9 +212,6 @@ for(let m =0; m < boxes.length; m++) {
     loopCounter = (loopCounter)+1 ;
     noMatched = 0;
 
-//var noMatchCounter = wordLength
-
-
 
 console.log("this is clickCounter:  " + clickCounter);
 console.log("events:  " + events)
@@ -264,32 +261,36 @@ if(gameOver == 0){
                    // console.log("this is resultsArray in loop:  " + resultsArray);
                   //  console.log(gameOver)
                     
-                
+              
                   }
+
+
+
+                  
                   if(letter != gameArray[k]) {
                       noMatched = noMatched + 1; 
-                 }     
+                                
                       
-                      
-                  
 
-                  if(noMatched == wordLength){                                        
+                  if(noMatched === wordLength){                                        
                   
                   
-                  if(events <9){  noMatchCounter = (noMatchCounter+ 1) }
-                  //else {noMatchCounter = noMatchCounter + 1;
+                  if(events === 1){  noMatchCounter = (noMatchCounter+ 1) }
+                else if (noMatched === wordLength && letter != gameArray[k]) {
+                    noMatchCounter = noMatchCounter + 1;}
                 //  noMatchCounter = noMatchCounter - (loopCounter/events);
-                 noMatchCounter = clickCounter - numberMatched//}
-                
-                }
-                clickCounter = (loopCounter/ events)
-                console.log("noMatched:  " + noMatched)
+                //noMatchCounter = clickCounter - numberMatched}
+                               console.log("noMatched:  " + noMatched)
                 console.log("noMatchCounter:  " + noMatchCounter)
                 console.log("word length:  " + wordLength)
                 console.log("clickcounter:  " + clickCounter)
                 console.log("loopCounter:  " + loopCounter)
                 console.log("event:  " + events)
                 console.log("number match:  " + numberMatched)
+                }}
+                //clickCounter = (loopCounter/ events)
+                
+ 
    // console.log("loopcounter" + loopCounter); 
     
 

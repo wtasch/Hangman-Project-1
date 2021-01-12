@@ -192,42 +192,11 @@
   font-family: 'Helvetica Neue', Helvetica, Verdana, sans-serif;
 }
 
-header {
-  grid-column: span 2;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-}
 
-header h1 {
-  margin: 12px 0;
-  padding: 0;
-}
-
-nav ul {
-  display: flex;
-  width: 335px;
-  justify-content: space-between;
-}
-
-nav ul li {
-  width: 100px;
-  list-style-type: none;
-  background: #000;
-  text-align: center;
-  padding: 6px 4px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
 
 body {
   grid-column: span 2;
-  /*background-image: url(http://getwallpapers.com/wallpaper/full/2/e/b/1406291-cool-inspirational-background-pictures-1920x1200.jpg);
-  */
-  background-image: url(http://getwallpapers.com/wallpaper/full/9/f/6/29324.jpg#.X_3C3tTL3wQ.link);
+   background-image: url(http://getwallpapers.com/wallpaper/full/9/f/6/29324.jpg#.X_3C3tTL3wQ.link);
   background-repeat: no-repeat;
   background-position: 0 65%;
   width: 1000px;
@@ -235,10 +204,6 @@ body {
   text-align: center;
 }
 
-section.hero blockquote {
-  font: bold 3em 'Pinyon Script', cursive;
-  margin-bottom: 0;
-}
 
 
 
