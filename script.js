@@ -14,6 +14,7 @@ var letter = "";
 var noMatched = 0;
 var noMatchCounter = 0;
 var numberMatched = 0;
+var redCount = 0;
 var results = document.getElementById("gameDisplay");
 const goButton = document.querySelector('#go-btn');
 let selectWordtype = "";//document.querySelectorAll('.selectButton');
@@ -36,18 +37,18 @@ var manual = document.querySelector('#manual');
 //Select type button s>>>>>>>>>>>>>>>>>
 manual.addEventListener("click", function(e5) {
     this.style.background = "blue";
-    document.querySelector('#random').style.background = "white";
+    document.querySelector('#random').style.background = "darkgoldenrod";
     selectWordtype = "manual"
     document.getElementById("gameWord").style.visibility = "visible";
     gameOver = 1;
-
+redCount = 0;
 console.log(selectWordtype);}
 )
 
 var random = document.querySelector('#random');
 random.addEventListener("click", function(e6) {
     this.style.background = "blue";
-    document.querySelector('#manual').style.background = "white";
+    document.querySelector('#manual').style.background = "darkgoldenrod";
     selectWordtype = "random"
     document.getElementById("gameWord").style.visibility = "hidden";
     gameOver = 1;
@@ -116,7 +117,7 @@ document.querySelector(".rightfoot").style.visibility = "hidden";
 
 
     for( let i =  0; i < boxes.length; i++) {
-      resetter[i].style.background = "white";  
+      resetter[i].style.background = "brown";  
     }   
 } //reset Function
 
@@ -130,7 +131,7 @@ resetFunction();
 //Select type button s>>>>>>>>>>>>>>>>>
 manual.addEventListener("click", function(e5) {
     this.style.background = "blue";
-    document.querySelector('#random').style.background = "white";
+    document.querySelector('#random').style.background = "brown";
     selectWordtype = "manual"
     document.getElementById("gameWord").style.visibility = "visible"
     gameOver = 1;
@@ -142,7 +143,7 @@ console.log(selectWordtype);}
 var random = document.querySelector('#random');
 random.addEventListener("click", function(e6) {
     this.style.background = "blue";
-    document.querySelector('#manual').style.background = "white";
+    document.querySelector('#manual').style.background = "brown";
     selectWordtype = "random";
     gameOver = 1;
     document.getElementById("gameWord").style.visibility = "hidden";
@@ -209,12 +210,11 @@ if(gameOver === 1) {
 for(let m =0; m < boxes.length; m++) {
  
     boxes[m].addEventListener("click", function(evt){
-    loopCounter = (loopCounter)+1 ;
+    //loopCounter = (loopCounter)+1 ;
     noMatched = 0;
 
 
-console.log("this is clickCounter:  " + clickCounter);
-console.log("events:  " + events)
+
 
 
 
@@ -226,6 +226,8 @@ if(gameOver == 0){
     wordLength = wordTxt.length;
    // console.log(wordLength)
     this.style.background = "red";
+    redCount=redCount + 1;
+    console.log("redcount:  " + redCount)
     wordTxt = wordTxt.toUpperCase();
    /*
     document.querySelector(".vert").style.visibility = "visible"
@@ -266,7 +268,7 @@ if(gameOver == 0){
 
 
 
-                  
+                
                   if(letter != gameArray[k]) {
                       noMatched = noMatched + 1; 
                                 
@@ -275,19 +277,24 @@ if(gameOver == 0){
                   if(noMatched === wordLength){                                        
                   
                   
-                  if(events === 1){  noMatchCounter = (noMatchCounter+ 1) }
-                else if (noMatched === wordLength && letter != gameArray[k]) {
-                    noMatchCounter = noMatchCounter + 1;}
-                //  noMatchCounter = noMatchCounter - (loopCounter/events);
+                  if(events === 1){  noMatchCounter = (noMatchCounter+ 1); }
+                else if (noMatched === wordLength) {
+                    noMatchCounter = noMatchCounter + 1;
+                    loopCounter = loopCounter +1;
+                noMatchCounter =loopCounter/events;
+            }
                 //noMatchCounter = clickCounter - numberMatched}
-                               console.log("noMatched:  " + noMatched)
+                               //console.log("noMatched:  " + noMatched)
                 console.log("noMatchCounter:  " + noMatchCounter)
-                console.log("word length:  " + wordLength)
+                //console.log("word length:  " + wordLength)
                 console.log("clickcounter:  " + clickCounter)
                 console.log("loopCounter:  " + loopCounter)
                 console.log("event:  " + events)
                 console.log("number match:  " + numberMatched)
+                
+console.log("events:  " + events)
                 }}
+                //for after events = 2
                 //clickCounter = (loopCounter/ events)
                 
  
@@ -321,7 +328,7 @@ if(gameOver == 0){
                          }
                          
                          //noMatched = 0;
-
+                        }
                 if (noMatchCounter > 6){
                     document.querySelector('#banner').textContent = "Game Over, Please Try Again";
                     document.querySelector('#banner').style.background = "red";
@@ -337,7 +344,7 @@ document.querySelector('#counterDisplay').textContent ="Game Counter:  You have 
                              document.querySelector('#banner').style.background = "lightgreen";
 
                             }
-                }//for loop
+               // }//for loop
             }   //check for gameOver    
     })
 }
