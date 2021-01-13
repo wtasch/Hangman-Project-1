@@ -20,7 +20,7 @@
 
 }
 .head {
-  background: rgb(50, 186, 228);
+  background: bisque;
   height: 100px;
   width: 100px;
   border-radius: 100px 100px 60px 60px;
@@ -32,7 +32,7 @@
 .chest {
   height: 40px;
   width: 40px;
-  border-top: 200px solid rgb(39, 54, 197);
+  border-top: 200px solid darkgoldenrod;);
   border-left: 75px ;
   border-right: 75px ;
   border-radius: 100px 100px 100px 100px;
@@ -46,7 +46,7 @@
   width: 150px;
   background: rgb(223, 183, 97);
   border-radius: 100px 50px 50px 100px;
-  border: 15px solid blue;
+  border: 15px solid darkgoldenrod;
   position: absolute;
   top: 150px;
   left: 740px;
@@ -59,7 +59,7 @@
   width: 150px;
   background: rgb(223, 183, 97);
   border-radius: 50px 100px 100px 50px;
-  border: 15px solid blue;
+  border: 15px solid darkgoldenrod;
   position: absolute;
   top: 150px;
   left: 935px;
@@ -71,7 +71,7 @@
   width: 180px;
   background: rgb(223, 183, 97);
   border-radius: 100px 50px 50px 100px;
-  border: 15px solid blue; 
+  border: 15px solid darkgoldenrod;; 
   position: absolute;
   top: 450px;
   left: 720px;
@@ -82,7 +82,7 @@
   width: 180px;
   background: rgb(223, 183, 97);
   border-radius: 100px 50px 50px 100px;
-  border: 15px solid blue;
+  border: 15px solid darkgoldenrod;;
   position: absolute;
   top: 450px;
   left: 900px;
@@ -94,26 +94,37 @@
     color: beige;
     font-size: 20px;
   }
-  
+  #go-btn {
+    background-color: brown;
+    margin: 5px;
+    border-radius: 100px 100px 100px 100px;
+    border: 3px solid black;
+    
+  }
   
   #banner {
     width: 500px;
+    font-family: sans-serif;
+    font-size: 30px;
   }
   #wordInput {
-      font-size: 20px;
+      font-size: 40px;
   }
    #gameWord {
       font-size: 30px;
       background-color: burlywood;
       color: white;
+      
   }
   #gameDisplay {
     font-weight: bold;
+    text-emphasis: bold;
     background: none;
     align-items: center;
-    width: 300px;
-    height: 100px;
+    width: 400px;
+    height: 200px;
     color: beige
+    
 
     
 
@@ -127,6 +138,8 @@
     font-weight: bold;
     background: none;
     align-items: center;
+    border-radius: 100px 100px 100px 100px;
+    font-family: sans-serif
    
   }
   
@@ -139,9 +152,10 @@
   .play-area {
     display: grid;
     max-width: 1000px;
-    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
-    margin: 70px;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+    margin: 50px;
     align-items: center;
+    font-family: sans-serif
   }
   .block {
   
@@ -152,16 +166,18 @@
     font-size: 3rem;
     font-weight: bold;
     border: 3px solid black;
- 
-    background: white;
+    font-family: sans-serif;
+    background: darkgoldenrod;
+    border-radius: 50px 50px 10px 10px;
   }
   
   .selectors {
     display: grid;
-    max-width: 1000px;
-    grid-template-columns: 150px 150px;
-    margin: 10px;
+    max-width: 100px;
+    grid-template-columns: 160px 150px;
+    margin: 20px;
     align-items: center;
+    border-radius: 100px 100px 100px 100px;
   }
   .selectButton {
   
@@ -169,11 +185,12 @@
     height: 20px;
     align-items: center;
     text-align: center;
-   
+    margin-right: 40px;
     font-weight: bold;
     border: 3px solid black;
+    border-radius: 100px 100px 100px 100px;
  
-    background: white;
+    background: darkgoldenrod;
   }
   
   .select:hover {

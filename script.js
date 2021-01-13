@@ -239,7 +239,7 @@ if(gameOver == 0){
     document.querySelector(".rightfoot").style.visibility = "visible"*/
     if (clickCounter < 8){
         document.querySelector('#banner').textContent = "Congnitive Load = " +wordLength;
-        document.querySelector('#banner').style.background = "yellow";
+        document.querySelector('#banner').style.background = "brown";
     }
 //if(gameOver === 1) {
   //  alert("Please Click Go Play Button"); }                   
