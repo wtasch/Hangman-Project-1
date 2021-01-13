@@ -33,7 +33,6 @@ document.querySelector(".rightfoot").style.visibility = "hidden";
 document.getElementById("gameWord").style.visibility = "hidden"
 var manual = document.querySelector('#manual');
 
-
 //Select type button s>>>>>>>>>>>>>>>>>
 manual.addEventListener("click", function(e5) {
     this.style.background = "blue";
@@ -222,16 +221,8 @@ for(let m =0; m < boxes.length; m++) {
     redCount=redCount + 1;
     console.log("redcount:  " + redCount)
     wordTxt = wordTxt.toUpperCase();
-   /*
-    document.querySelector(".vert").style.visibility = "visible"
-    console.log(document.querySelector(".vert").style.visibility)
-    document.querySelector(".horz").style.visibility = "visible"
-    document.querySelector(".head").style.visibility = "visible"
-    document.querySelector(".chest").style.visibility = "visible"
-    document.querySelector(".leftarm").style.visibility = "visible"
-    document.querySelector(".rightarm").style.visibility = "visible"
-    document.querySelector(".leftfoot").style.visibility = "visible"
-    document.querySelector(".rightfoot").style.visibility = "visible"*/
+
+
     if (clickCounter < 8){
         document.querySelector('#banner').textContent = "Congnitive Load = " +wordLength;
         document.querySelector('#banner').style.background = "brown";
@@ -255,16 +246,20 @@ for(let m =0; m < boxes.length; m++) {
                    // console.log("this is game array in loop:    " + gameArray);
                    // console.log("this is resultsArray in loop:  " + resultsArray);
                   //  console.log(gameOver)
-                    
+                   
               
                   }
-
-
-
                 
                   if(letter != gameArray[k]) {
                       noMatched = noMatched + 1; 
-                                
+
+
+            if (events > 1 && noMatched === wordLength && letter != gameArray[k]) {
+                    noMatchCounter = noMatchCounter + 1;
+                   // loopCounter = loopCounter +1;
+               // noMatchCounter =loopCounter/events;
+            }
+                                   
                       
 
                   if(noMatched === wordLength){                                        
@@ -273,12 +268,7 @@ for(let m =0; m < boxes.length; m++) {
                   if(events === 1){  noMatchCounter = (noMatchCounter+ 1);
                  
                 }
-                 if (events > 1 && noMatched === wordLength && letter != gameArray[k]) {
-                    noMatchCounter = noMatchCounter + 1;
-                   // loopCounter = loopCounter +1;
-               // noMatchCounter =loopCounter/events;
-            }
-                //noMatchCounter = clickCounter - numberMatched}
+             //noMatchCounter = clickCounter - numberMatched}
                                //console.log("noMatched:  " + noMatched)
                 console.log("noMatchCounter:  " + noMatchCounter)
                 //console.log("word length:  " + wordLength)
@@ -289,14 +279,6 @@ for(let m =0; m < boxes.length; m++) {
                 console.log("this is noMatched" + noMatched)                
                 console.log("events:  " + events)
                 }}
-                //for after events = 2
-                //clickCounter = (loopCounter/ events)
-                
- 
-   // console.log("loopcounter" + loopCounter); 
-    
-
-
 
 
                          if(noMatchCounter === 1) {
