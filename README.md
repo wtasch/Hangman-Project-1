@@ -21,7 +21,15 @@ Features:
 3. Automated Game resetting features.
 4. letter matrix for player to select from.
 5. Hangman graphics to show how incorrect letters where selected.
-6.  game winner and loser messaging.
+6. game winner and loser messaging.
+7. Game counter displaying the number of chances left to play during the game.
+8. Computer Graphics with old west these for Hang Man.
+    a. Colored changing buttons for game type selection and game start.
+    b. Letter grid in the shape of tombstones.
+    c. hanging man and hanging frame will appear as player selectors wrong letters.
+    d. also featuring a bird ready to eat you after you are dead.
+link to screen shot:
+https://github.com/wtasch/-wtasch.github.io/issues/1
 
 List of Technologies Used:
 
