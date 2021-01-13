@@ -47,6 +47,8 @@ open or click on index.html:
 link to game repository:
 file:///Users/lv01317/coded/work/deere6/week3/project1/index.html?author=Start+Clicking+Letters&go-btn=Play+HangMan
 
+link to screen shot:
+https://github.com/wtasch/-wtasch.github.io/issues/1
 
 
 
