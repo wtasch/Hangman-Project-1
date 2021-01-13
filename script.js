@@ -95,7 +95,7 @@ events = events + 1;
     wordLength= 0;
     wordTxt = "";
     letter = "";
-    gameOver = 1;
+    gameOver = 0;
     document.querySelector("#gameWord").value = "";
     wordLength = wordTxt.length;
     clickCounter = 0;
@@ -213,14 +213,7 @@ for(let m =0; m < boxes.length; m++) {
     //loopCounter = (loopCounter)+1 ;
     noMatched = 0;
 
-
-
-
-
-
-if(gameOver == 0){
-    
-    
+   
     letter = this.textContent;
    // console.log("this.textcontent" + this.textContent)
     wordLength = wordTxt.length;
@@ -277,11 +270,13 @@ if(gameOver == 0){
                   if(noMatched === wordLength){                                        
                   
                   
-                  if(events === 1){  noMatchCounter = (noMatchCounter+ 1); }
-                else if (noMatched === wordLength) {
+                  if(events === 1){  noMatchCounter = (noMatchCounter+ 1);
+                 
+                }
+                 if (events > 1 && noMatched === wordLength && letter != gameArray[k]) {
                     noMatchCounter = noMatchCounter + 1;
-                    loopCounter = loopCounter +1;
-                noMatchCounter =loopCounter/events;
+                   // loopCounter = loopCounter +1;
+               // noMatchCounter =loopCounter/events;
             }
                 //noMatchCounter = clickCounter - numberMatched}
                                //console.log("noMatched:  " + noMatched)
@@ -291,8 +286,8 @@ if(gameOver == 0){
                 console.log("loopCounter:  " + loopCounter)
                 console.log("event:  " + events)
                 console.log("number match:  " + numberMatched)
-                
-console.log("events:  " + events)
+                console.log("this is noMatched" + noMatched)                
+                console.log("events:  " + events)
                 }}
                 //for after events = 2
                 //clickCounter = (loopCounter/ events)
@@ -333,7 +328,7 @@ console.log("events:  " + events)
                     document.querySelector('#banner').textContent = "Game Over, Please Try Again";
                     document.querySelector('#banner').style.background = "red";
             }
-document.querySelector('#counterDisplay').textContent ="Game Counter:  You have  " + (7 - noMatchCounter) + " So Far..."
+document.querySelector('#counterDisplay').textContent ="Game Counter:  You have  " + (7 - noMatchCounter) + " Chances Left"
 
                 if (result == wordTxt) {
                              console.log("you won");
@@ -345,7 +340,7 @@ document.querySelector('#counterDisplay').textContent ="Game Counter:  You have 
 
                             }
                // }//for loop
-            }   //check for gameOver    
+               
     })
 }
 
