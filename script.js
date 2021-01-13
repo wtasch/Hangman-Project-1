@@ -54,29 +54,16 @@ random.addEventListener("click", function(e6) {
 console.log(selectWordtype);}
 )
 
-var words = [
-'Horse',
-'Dude',
-'Dog',
-'Truck',
-'bird',
-'Iguana',
-'driving',
-'animal',
-'house',
-'food',
-'farm',
-'automoble'
-];
+var words = ['Horse','Dude','Dog','Truck','bird','Iguana','driving','animal','house','food','farm','automoble'];
 function randomWord(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
  //start game, big time parantheses here================================START GAME BUTTON
 goButton.addEventListener("click", function(evt) {  
-evt.preventDefault();
-gameOver = 0;
-events = events + 1;
+    evt.preventDefault();
+    gameOver = 0;
+    events = events + 1;
 
 
 ///RESET GAME++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++RESET
@@ -105,14 +92,14 @@ events = events + 1;
     loopCounter = 0;
 //hide hangman elements
 
-document.querySelector(".vert").style.visibility = "hidden";
-document.querySelector(".horz").style.visibility = "hidden";
-document.querySelector(".head").style.visibility = "hidden";
-document.querySelector(".chest").style.visibility = "hidden";
-document.querySelector(".leftarm").style.visibility = "hidden";
-document.querySelector(".rightarm").style.visibility = "hidden";
-document.querySelector(".leftfoot").style.visibility = "hidden";
-document.querySelector(".rightfoot").style.visibility = "hidden";
+    document.querySelector(".vert").style.visibility = "hidden";
+    document.querySelector(".horz").style.visibility = "hidden";
+    document.querySelector(".head").style.visibility = "hidden";
+    document.querySelector(".chest").style.visibility = "hidden";
+    document.querySelector(".leftarm").style.visibility = "hidden";
+    document.querySelector(".rightarm").style.visibility = "hidden";
+    document.querySelector(".leftfoot").style.visibility = "hidden";
+    document.querySelector(".rightfoot").style.visibility = "hidden";
 
 
     for( let i =  0; i < boxes.length; i++) {
@@ -122,7 +109,7 @@ document.querySelector(".rightfoot").style.visibility = "hidden";
 
 
 resetButton.addEventListener("click", function(e1){
-resetFunction();
+    location.reload();
 
 })
   
@@ -150,20 +137,7 @@ random.addEventListener("click", function(e6) {
     resetFunction();}
 )
 
-var words = [
-'Horse',
-'Dude',
-'Dog',
-'Truck',
-'bird',
-'Iguana',
-'driving',
-'animal',
-'house',
-'food',
-'farm',
-'automoble'
-];
+var words = ['Horse','Dude','Dog','Truck','bird','Iguana','driving','animal','house','food','farm','automoble'];
 function randomWord(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
